@@ -706,3 +706,21 @@ Phase 7: 投稿 → 选择期刊 → 提交 → 审稿 → 修改 → 重投
 - `raw/` 中的文件绝对不可修改（**`raw/lessons/` 例外**——这是学习笔记的存放位置，可自由编辑）
 - 每次操作后都要更新 `wiki/index.md` 和 `wiki/log.md`
 - 如果用户只问简单问题（不需要 Wiki），正常回答即可，不必强制走 Wiki 流程
+
+## Git 同步规则
+
+本仓库已关联到 GitHub：`https://github.com/yangchunwanwusheng/obsidian`
+
+**每次完成任何文件修改后（包括写入、编辑、创建、删除），必须自动将改动推送到远程仓库：**
+
+```
+git add -A
+git commit -m "描述改动内容（中文，简洁）"
+git push
+```
+
+**规则：**
+- 每次对话结束时，检查 `git status`，如果有未推送的改动就必须 commit + push
+- commit message 使用中文简洁描述本次改动内容
+- 不要等待用户提醒，这是自动执行的规则
+- 如果 push 失败（如网络问题），提醒用户手动处理
