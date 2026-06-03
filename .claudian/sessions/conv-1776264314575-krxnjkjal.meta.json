@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776264314575-krxnjkjal",
+  "providerId": "claude",
+  "title": "<think>\nThe user is asking me to continue writi...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776264314575,
+  "updatedAt": 1776487124475,
+  "lastResponseAt": 1776265084928,
+  "sessionId": "fb148f4d-1a3d-4f25-8ce4-7f73d51f5c35",
+  "providerState": {
+    "providerSessionId": "fb148f4d-1a3d-4f25-8ce4-7f73d51f5c35"
+  },
+  "currentNote": "idea/novel-workflow.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778988111936-u2nmvsn7w",
+  "providerId": "claude",
+  "title": "<think>The user sent a message in Chinese that ...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778988111936,
+  "updatedAt": 1780463971095,
+  "lastResponseAt": 1778989031698,
+  "sessionId": "e01a1ee0-ce4f-45f2-9271-bf8520659c66",
+  "providerState": {
+    "providerSessionId": "e01a1ee0-ce4f-45f2-9271-bf8520659c66"
+  },
+  "currentNote": "raw/lessons/CortexDebate/00-essence.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

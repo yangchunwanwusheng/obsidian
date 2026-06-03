@@ -1,0 +1,22 @@
+{
+  "id": "conv-1776076358145-0s3qto5t2",
+  "providerId": "claude",
+  "title": "规划续写人间镇陵人小说30-35章",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776076358145,
+  "updatedAt": 1776078310100,
+  "lastResponseAt": 1776076557870,
+  "sessionId": "6268f057-f4e3-4d2c-89ff-68855792d3f6",
+  "providerState": {
+    "providerSessionId": "6268f057-f4e3-4d2c-89ff-68855792d3f6"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

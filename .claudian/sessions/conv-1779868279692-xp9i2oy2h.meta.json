@@ -1,0 +1,23 @@
+{
+  "id": "conv-1779868279692-xp9i2oy2h",
+  "providerId": "claude",
+  "title": "<think>The user is preparing for a two-round in...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1779868279693,
+  "updatedAt": 1780403182301,
+  "lastResponseAt": 1779873334474,
+  "sessionId": "8b6985d9-6941-47a9-a576-00f29c6b229a",
+  "providerState": {
+    "providerSessionId": "8b6985d9-6941-47a9-a576-00f29c6b229a"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 5262,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 194816,
+    "contextWindow": 1000000,
+    "contextTokens": 200078,
+    "percentage": 20
+  }
+}

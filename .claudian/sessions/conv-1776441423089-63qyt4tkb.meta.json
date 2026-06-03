@@ -1,0 +1,14 @@
+{
+  "id": "conv-1776441423089-63qyt4tkb",
+  "providerId": "claude",
+  "title": "我想要研究 agent memory方向，考虑发一篇论文，你接下来帮我找论文学习。",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1776441423089,
+  "updatedAt": 1776441455530,
+  "lastResponseAt": 1776441451785,
+  "sessionId": "a6217c09-1920-4293-a06a-ffb619844628",
+  "providerState": {
+    "providerSessionId": "a6217c09-1920-4293-a06a-ffb619844628"
+  },
+  "currentNote": "CLAUDE.md"
+}

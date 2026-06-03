@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778989229537-nevd6cvbc",
+  "providerId": "claude",
+  "title": "<think>The user wants to research based on two ...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778989229537,
+  "updatedAt": 1779204777708,
+  "lastResponseAt": 1778998071854,
+  "sessionId": "057976c0-c09a-4fe5-bde4-92bdef30c716",
+  "providerState": {
+    "providerSessionId": "057976c0-c09a-4fe5-bde4-92bdef30c716"
+  },
+  "currentNote": "raw/lessons/G2CP/00-essence.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0
+  },
+  "resumeAtMessageId": "604d922c-abc2-4302-82da-9f3a8074e6f3"
+}

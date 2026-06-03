@@ -1,0 +1,22 @@
+{
+  "id": "conv-1780464104172-ur4oay9cv",
+  "providerId": "claude",
+  "title": "<think>The user wants to sync an Obsidian vault...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780464104173,
+  "updatedAt": 1780464296352,
+  "lastResponseAt": 1780464296352,
+  "sessionId": "c3c10599-6588-4475-b8ad-f8f80f550638",
+  "providerState": {
+    "providerSessionId": "c3c10599-6588-4475-b8ad-f8f80f550638"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 96882,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 96882,
+    "percentage": 10
+  }
+}

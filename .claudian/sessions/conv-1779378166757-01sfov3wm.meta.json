@@ -1,0 +1,23 @@
+{
+  "id": "conv-1779378166757-01sfov3wm",
+  "providerId": "claude",
+  "title": "<think>The user wants to convert all content fr...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1779378166758,
+  "updatedAt": 1779611983893,
+  "lastResponseAt": 1779378545954,
+  "sessionId": "f4a9efb4-632d-4968-93c4-2abd1fe4c08b",
+  "providerState": {
+    "providerSessionId": "f4a9efb4-632d-4968-93c4-2abd1fe4c08b"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": false
+  }
+}

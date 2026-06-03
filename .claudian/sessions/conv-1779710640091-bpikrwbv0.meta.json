@@ -1,0 +1,14 @@
+{
+  "id": "conv-1779710640091-bpikrwbv0",
+  "providerId": "claude",
+  "title": "https://github",
+  "titleGenerationStatus": "pending",
+  "createdAt": 1779710640092,
+  "updatedAt": 1779710664515,
+  "lastResponseAt": 1779710662451,
+  "sessionId": "b7b4bb8e-b82e-4731-af39-a4678b1fafb3",
+  "providerState": {
+    "providerSessionId": "b7b4bb8e-b82e-4731-af39-a4678b1fafb3"
+  },
+  "currentNote": "CLAUDE.md"
+}

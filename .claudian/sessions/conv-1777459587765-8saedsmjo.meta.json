@@ -1,0 +1,12 @@
+{
+  "id": "conv-1777459587765-8saedsmjo",
+  "providerId": "claude",
+  "title": "<think>\n用户问的是一个关于值的行为问题：\"输入的值是直接覆盖原值，还是追加，还是两者均...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1777459587765,
+  "updatedAt": 1777459607153,
+  "lastResponseAt": 1777459598224,
+  "sessionId": null,
+  "providerState": {},
+  "currentNote": "raw/lessons/LangGraph/06-human-in-the-loop.md"
+}

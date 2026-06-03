@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776179859184-jecsznl0f",
+  "providerId": "claude",
+  "title": "撰写人间镇陵人卷二第41-47章",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776179859185,
+  "updatedAt": 1776264251721,
+  "lastResponseAt": 1776180854919,
+  "sessionId": "eb65c7c2-ca3a-48e4-aed1-106535c1de86",
+  "providerState": {
+    "providerSessionId": "eb65c7c2-ca3a-48e4-aed1-106535c1de86"
+  },
+  "currentNote": "idea/novel-workflow.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 75984,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 30115,
+    "contextWindow": 200000,
+    "contextTokens": 106099,
+    "percentage": 53,
+    "contextWindowIsAuthoritative": true
+  }
+}

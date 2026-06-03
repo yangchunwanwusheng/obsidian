@@ -1,0 +1,24 @@
+{
+  "id": "conv-1777381887257-754atpay8",
+  "providerId": "claude",
+  "title": "<think>\n用户问的是\"什么是schema\"，这是一个关于数据库/编程概念的解释性问题。\n...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1777381887257,
+  "updatedAt": 1777459530171,
+  "lastResponseAt": 1777381906926,
+  "sessionId": "4d75e018-1e76-4d01-a128-3ab61e652d2f",
+  "providerState": {
+    "providerSessionId": "4d75e018-1e76-4d01-a128-3ab61e652d2f"
+  },
+  "currentNote": "raw/lessons/LangGraph/02-stategraph-basics.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

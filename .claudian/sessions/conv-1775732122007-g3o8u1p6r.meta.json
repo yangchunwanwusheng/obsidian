@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775732122007-g3o8u1p6r",
+  "providerId": "claude",
+  "title": "Analyze selected content in depth",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775732122007,
+  "updatedAt": 1775887403510,
+  "lastResponseAt": 1775732155028,
+  "sessionId": null,
+  "currentNote": "raw/lessons/Transformer/02-self-attention.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

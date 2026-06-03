@@ -1,0 +1,67 @@
+{
+  "id": "conv-1776090385983-zpky180bm",
+  "providerId": "claude",
+  "title": "规划人间镇陵人小说创作工作流",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776090385983,
+  "updatedAt": 1776092006209,
+  "lastResponseAt": 1776091419794,
+  "sessionId": "3c34936e-5405-461f-9761-eae3c1a4d998",
+  "providerState": {
+    "providerSessionId": "3c34936e-5405-461f-9761-eae3c1a4d998",
+    "subagentData": {
+      "call_edf0da0d346c4dd593d39bbb": {
+        "id": "call_edf0da0d346c4dd593d39bbb",
+        "description": "规划小说写作工作流",
+        "prompt": "我需要为一个 Obsidian Vault 中的用户设计一个完整的**网络小说写作工作流系统**。以下是核心需求：\n\n## 用户需求\n\n1. **小说类型**：男频、群像、有刀（虐心情节）有燃（热血燃爆）、智力在线\n2. **规模**：每章 ≥ 3000字，完结 ≥ 百万字\n3. **参考作品**：《斩神》等优秀网络小说\n4. **核心挑战**：LLM 上下文有限，需要设计好总结/规划文档体系来管理长篇小说\n5. **常用操作**：续写N章内容，需要先收集现有信息→规划剧情→写作→审查→更新纲要\n6. **剧情要求**：世界观宏大但起始微小，子副本叙事不平铺直叙\n\n## 请规划以下内容\n\n### 1. Vault 目录结构设计\n- 小说文件应该放在哪里？与现有 wiki/ 结构如何共存？\n- 需要哪些元数据文档（人物设定、世界观、伏笔追踪、大纲等）\n\n### 2. 文档模板设计\n- 世界观设定模板\n- 人物档案模板（支持群像）\n- 章节大纲模板\n- 伏笔追踪模板（设与收）\n- 剧情副本模板\n\n### 3. 写作工作流设计\n- 单次续写流程（收集信息→规划→写作→审查→更新）\n- 如何管理上下文（哪些文档是写作时必须加载的）\n- 子智能体分工方案（Explorer搜索、Planner规划、Code-reviewer做内容审查等）\n\n### 4. 质量控制机制\n- 如何避免叙事平铺直叙\n- 如何确保人物一致性\n- 如何追踪伏笔\n- 如何保证百万字级别的连续性\n\n请输出详细的实施方案，包括文件路径、模板内容、工作流步骤等。",
+        "mode": "async",
+        "isExpanded": false,
+        "status": "error",
+        "toolCalls": [],
+        "asyncStatus": "orphaned",
+        "agentId": "ad31b47a5977604d8",
+        "startedAt": 1776090431047,
+        "result": "Conversation ended before task completed",
+        "completedAt": 1776092006208
+      },
+      "call_d0495391f48f4104b6de29f2": {
+        "id": "call_d0495391f48f4104b6de29f2",
+        "description": "研究网络小说写作技巧",
+        "prompt": "请帮我进行多维度的网络搜索和研究，收集以下信息：\n\n1. **网络小说写作技巧**：搜索\"如何写好网络小说\"、\"男频小说写作技巧\"、\"群像小说怎么写\"等关键词，了解：\n   - 网络小说的常见结构和节奏把控\n   - 男频小说的核心要素（爽点、燃点、刀子）\n   - 群像小说的人物塑造方法\n   - 如何写出\"有刀有燃\"的效果\n   - 叙事节奏和非平铺直叙的技巧\n\n2. **参考作品分析**：搜索\"斩神 小说 写作技巧分析\"、\"斩神 小说 叙事手法\"等，了解：\n   - 《斩神》的成功要素\n   - 类似风格的优秀男频小说推荐\n   - 现象级网络小说的共同特点\n\n3. **长篇小说管理**：搜索\"长篇小说大纲管理\"、\"网络小说伏笔管理\"等，了解：\n   - 百万字级别小说的大纲管理方法\n   - 伏笔的埋设与回收技巧\n   - 世界观搭建方法\n\n4. **LLM辅助写作**：搜索\"AI辅助写小说\"、\"ChatGPT写长篇小说技巧\"等，了解：\n   - 如何用AI辅助写长篇小说\n   - 上下文管理策略\n   - 保持连贯性的方法\n\n请详细整理搜索结果，提供有价值的信息和可操作的建议。这是纯研究任务，不需要写代码或文件。",
+        "mode": "async",
+        "isExpanded": false,
+        "status": "error",
+        "toolCalls": [],
+        "asyncStatus": "orphaned",
+        "agentId": "a66b2521c91d0aa07",
+        "startedAt": 1776090446671,
+        "result": "Conversation ended before task completed",
+        "completedAt": 1776092006209
+      },
+      "call_3e11b2af233a4cc59ab9709f": {
+        "id": "call_3e11b2af233a4cc59ab9709f",
+        "description": "搜索小说写作核心技巧",
+        "prompt": "请帮我搜索以下几个方面的网络小说写作知识，这是纯研究任务：\n\n搜索1：搜索\"男频网络小说写作技巧 爽点 燃点 刀子\"了解男频小说的核心要素\n搜索2：搜索\"群像小说写作方法 多主角 人物塑造\"了解群像写作方法\n搜索3：搜索\"斩神 三九音域 小说分析 写作手法\"了解斩神这部小说的成功要素\n搜索4：搜索\"长篇小说 大纲管理 伏笔 百万字 连贯性\"了解长篇管理技巧\n搜索5：搜索\"网络小说叙事节奏 非平铺直叙 悬念设置\"了解叙事技巧\n搜索6：搜索\"人间镇陵人 小说 设定\"了解用户提到的这部小说的背景\n\n请综合整理所有搜索结果，给出详细的写作指导建议。",
+        "mode": "async",
+        "isExpanded": false,
+        "status": "error",
+        "toolCalls": [],
+        "asyncStatus": "orphaned",
+        "agentId": "a37f8c4af758ad4b5",
+        "startedAt": 1776090472923,
+        "result": "Conversation ended before task completed",
+        "completedAt": 1776092006209
+      }
+    }
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": false
+  }
+}

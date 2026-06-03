@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778314389672-06hr77xen",
+  "providerId": "claude",
+  "title": "对于论文翻译笔记中的内容，做一个增补。",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1778314389672,
+  "updatedAt": 1778911225399,
+  "lastResponseAt": 1778843373293,
+  "sessionId": "fc53d630-715d-4f34-a429-6969e95acdc2",
+  "providerState": {
+    "providerSessionId": "fc53d630-715d-4f34-a429-6969e95acdc2"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

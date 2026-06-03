@@ -1,0 +1,23 @@
+{
+  "id": "conv-1778943191701-yzhjq6myx",
+  "providerId": "claude",
+  "title": "<think>The user wants me to supplement their we...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778943191702,
+  "updatedAt": 1778989127736,
+  "lastResponseAt": 1778945102952,
+  "sessionId": "0f0c2354-0ff6-473f-bbd1-c465de3383aa",
+  "providerState": {
+    "providerSessionId": "0f0c2354-0ff6-473f-bbd1-c465de3383aa"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

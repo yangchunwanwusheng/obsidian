@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776600471327-7tf7oi7xo",
+  "providerId": "claude",
+  "title": "<think>\n用户想要我根据他们的请求生成一个标题。让我分析一下：\n\n1. 用户的请求是关于...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776600471327,
+  "updatedAt": 1776610671742,
+  "lastResponseAt": 1776601178529,
+  "sessionId": "ac8f2c5e-6eb4-4376-865e-5576b382ec77",
+  "providerState": {
+    "providerSessionId": "ac8f2c5e-6eb4-4376-865e-5576b382ec77"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "conv-1775661129176-h1zptuf08",
+  "providerId": "claude",
+  "title": "Design topic learning workflow",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775661129176,
+  "updatedAt": 1775663510439,
+  "lastResponseAt": 1775663317362,
+  "sessionId": "2747887e-68a8-494b-a7ac-ed6ee2c46f0f",
+  "providerState": {
+    "providerSessionId": "2747887e-68a8-494b-a7ac-ed6ee2c46f0f",
+    "subagentData": {
+      "call_dbdfc9a5cf83488083ae4c14": {
+        "id": "call_dbdfc9a5cf83488083ae4c14",
+        "description": "规划 Transformer 学习路径",
+        "prompt": "用户想要深入学习 Transformer 架构，要求：\n1. 分多章节学习，内容足够深入\n2. 包含代码实现\n3. 学习笔记存放在 wiki/lessons/ 目录\n\n请制定详细的学习路径规划，包括：\n- 章节划分（每个章节的主题、核心内容）\n- 搜索策略（需要搜索哪些资源）\n- 执行顺序\n\n约束：\n- 每篇笔记 3000-5000 字，超出则拆分\n- 使用 Obsidian callout 实现交互式折叠\n- 笔记模板参考 _templates/lesson.md\n- 内容要深入，不能浅尝辄止\n- 最终写入 wiki/lessons/ 目录\n\nVault 路径：D:\\note\n模板路径：_templates/lesson.md\nCLAUDE.md 路径：CLAUDE.md（已定义 Learn 工作流）\n",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_521c8f212939451db1073c78",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\note\\_templates\\lesson.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttype: lesson\n3\ttags: [学习标签]\n4\tcreated: {{date}}\n5\tupdated: {{date}}\n6\ttopic: 学习主题\n7\tdifficulty: beginner | intermediate | advanced\n8\tprerequisites:\n9\t  - 前置知识1\n10\t  - 前置知识2\n11\tsources:\n12\t  - 来源1\n13\t  - 来源2\n14\tstatus: in-progress\n15\tseries:\n16\t  name: \"\"\n17\t  part: 1\n18\t---\n19\t\n20\t# {{title}}\n21\t\n22\t> 📌 一句话描述这节课你将学到什么\n23\t\n24\t---\n25\t\n26\t## 学习目标\n27\t\n28\t完成本课后，你应该能够：\n29\t- [ ] 目标 1\n30\t- [ ] 目标 2\n31\t- [ ] 目标 3\n32\t\n33\t## 前置知识\n34\t\n35\t> [!info] 开始之前\n36\t> 以下是学习本课需要先了解的概念。如果已熟悉可以跳过。\n37\t\n38\t| 概念 | 需要了解的程度 | Wiki 页面 |\n39\t|------|---------------|-----------|\n40\t| 概念名 | 基本理解即可 | [[wiki/concepts/xxx]] |\n41\t| 概念名 | 需要深入理解 | [[wiki/concepts/xxx]] |\n42\t\n43\t---\n44\t\n45\t## 直观理解\n46\t\n47\t> 用生活中的类比来解释整个主题，让完全不懂数学的人也能 get 到核心思想。\n48\t\n49\t用 1-2 个通俗的比喻来建立直觉。\n50\t\n51\t---\n52\t\n53\t## 核心概念\n54\t\n55\t### 概念一：xxx\n56\t\n57\t**一句话解释**：...\n58\t\n59\t**类比**：用日常生活中的例子来解释。\n60\t\n61\t**图解**：\n62\t> 用文字描述图示的结构，方便后续补充 Mermaid 图或手绘插图。\n63\t\n64\t**技术细节**：\n65\t数学公式或更严格的定义。\n66\t\n67\t> [!example] 举例\n68\t> 具体的数值例子，一步步演示。\n69\t\n70\t### 概念二：xxx\n71\t\n72\t（同上结构）\n73\t\n74\t---\n75\t\n76\t## 整体流程 / 架构图\n77\t\n78\t> 用结构化的方式展示各概念之间的关系。\n79\t\n80\t```text\n81\t（用 ASCII 或 Mermaid 展示架构/流程）\n82\t```\n83\t\n84\t---\n85\t\n86\t## 常见误区\n87\t\n88\t| 误区 | 正确理解 |\n89\t|------|----------|\n90\t| ❌ 错误认知 | ✅ 正确理解 |\n91\t| ❌ 错误认知 | ✅ 正确理解 |\n92\t\n93\t---\n94\t\n95\t## 思考题\n96\t\n97\t> [!note] 如何使用\n98\t> 先独立思考，想不出来可以点开 💡 提示。有答案后点开 ✅ 参考答案核对。\n99\t\n100\t### 基础理解\n101\t\n102\t**Q1. 问题内容？**\n103\t\n104\t> [!hint]- 💡 提示\n105\t> 提示内容\n106\t\n107\t> [!success]- ✅ 参考答案\n108\t> 答案内容\n109\t\n110\t**Q2. 问题内容？**\n111\t\n112\t> [!hint]- 💡 提示\n113\t> 提示内容\n114\t\n115\t> [!success]- ✅ 参考答案\n116\t> 答案内容\n117\t\n118\t### 深入思考\n119\t\n120\t**Q3. 问题内容？**\n121\t\n122\t> [!hint]- 💡 提示\n123\t> 提示内容\n124\t\n125\t> [!success]- ✅ 参考答案\n126\t> 答案内容\n127\t\n128\t---\n129\t\n130\t## 关键要点回顾\n131\t\n132\t- ✅ 要点 1\n133\t- ✅ 要点 2\n134\t- ✅ 要点 3\n135\t\n136\t---\n137\t\n138\t## 扩展阅读\n139\t\n140\t- 📄 [论文标题](论文链接) — 一句话说明为什么推荐\n141\t- 📝 [博客标题](博客链接) — 一句话说明为什么推荐\n142\t- 📺 [视频标题](视频链接) — 一句话说明为什么推荐\n143\t\n144\t## 相关页面\n145\t\n146\t- [[wiki/concepts/相关概念1]]\n147\t- [[wiki/concepts/相关概念2]]\n148\t- [[wiki/entities/相关实体]]\n149\t\n150\t## 下一步学习\n151\t\n152\t- 如果是系列课：下一篇 → [[wiki/lessons/lesson-name-2]]\n153\t- 建议的后续学习方向\n154\t\n\n<system-reminder>\nWhenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.\n</system-reminder>\n"
+          },
+          {
+            "id": "call_ffe07aaeccec47049855c43e",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\note\\wiki\\index.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# Wiki 索引\n2\t\n3\t> 本文件是 Wiki 的内容目录，LLM 每次摄入时更新。\n4\t\n5\t## 统计\n6\t\n7\t| 类型 | 数量 |\n8\t|------|------|\n9\t| 概念页 | 2 |\n10\t| 实体页 | 2 |\n11\t| 摘要页 | 0 |\n12\t| 对比页 | 0 |\n13\t| 概述页 | 0 |\n14\t| 学习笔记 | 0 |\n15\t\n16\t---\n17\t\n18\t## 概念（concepts/）\n19\t\n20\t- [[wiki/concepts/knowledge-compilation]] — 让 LLM 一次性编译原始资料为结构化知识，而非每次重新检索\n21\t- [[wiki/concepts/LLM Wiki]] — 用 LLM 自动构建和维护 Markdown 个人知识库的模式\n22\t\n23\t## 实体（entities/）\n24\t\n25\t- [[wiki/entities/Andrej Karpathy]] — AI 研究员、OpenAI 联合创始人、LLM Wiki 提出者\n26\t- [[wiki/entities/Obsidian]] — 本地优先的 Markdown 笔记应用，LLM Wiki 的前端界面\n27\t\n28\t## 摘要（summaries/）\n29\t\n30\t（暂无）\n31\t\n32\t## 对比分析（comparisons/）\n33\t\n34\t（暂无）\n35\t\n36\t## 综合概述（overviews/）\n37\t\n38\t（暂无）\n39\t\n40\t## 学习笔记（lessons/）\n41\t\n42\t（暂无）\n43\t\n\n<system-reminder>\nWhenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.\n</system-reminder>\n"
+          },
+          {
+            "id": "call_53aac7e2c4414d2f982b562f",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\note\\wiki\\log.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# Wiki 操作日志\n2\t\n3\t> 本文件按时间顺序记录所有 Wiki 操作。格式：`## [日期] 操作类型 | 简要描述`\n4\t\n5\t---\n6\t\n7\t## [2026-04-08] create | 初始化 LLM Wiki 系统\n8\t\n9\t- 创建了 Karpathy 风格的三层目录结构（raw/, wiki/, _templates/）\n10\t- 编写了 CLAUDE.md Schema 配置文件\n11\t- 创建了笔记模板（concept, entity, summary）\n12\t- 创建了 wiki/index.md 和 wiki/log.md\n13\t\n14\t## [2026-04-08] ingest | Karpathy Obsidian 工作流\n15\t\n16\t- 处理了 [[raw/Karpathy-Obsidian-LLM-Wiki.md]]\n17\t- 创建了概念页：[[wiki/concepts/knowledge-compilation]]、[[wiki/concepts/LLM Wiki]]\n18\t- 创建了实体页：[[wiki/entities/Andrej Karpathy]]、[[wiki/entities/Obsidian]]\n19\t- 更新了 [[wiki/index.md]]（2 概念 + 2 实体）\n20\t\n21\t## [2026-04-08] update | 新增「学习」工作流（Learn）\n22\t\n23\t- 在 CLAUDE.md Schema 中新增第四大操作流程：Learn（学习）\n24\t- 创建了 `wiki/lessons/` 目录，用于存放结构化学习笔记\n25\t- 创建了学习笔记模板 [[_templates/lesson.md]]\n26\t- 新增 `lesson` 页面类型及专属 Frontmatter 字段（difficulty, prerequisites, topic, status, series）\n27\t- 定义了完整的学习流程：主题分析 → 多源搜索 → 内容组织 → 思考题 → 写入 Wiki\n28\t- 更新了 [[wiki/index.md]]，新增学习笔记统计和目录\n29\t\n\n<system-reminder>\nWhenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.\n</system-reminder>\n"
+          },
+          {
+            "id": "call_afc5bf16de6f49e08315a487",
+            "name": "Glob",
+            "input": {
+              "pattern": "**/*",
+              "path": "D:\\note\\wiki\\lessons"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "No files found"
+          },
+          {
+            "id": "call_96c641f9731c481cb9cfdca0",
+            "name": "Glob",
+            "input": {
+              "pattern": "**/*",
+              "path": "D:\\note\\wiki\\concepts"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "wiki\\concepts\\knowledge-compilation.md\nwiki\\concepts\\LLM Wiki.md"
+          },
+          {
+            "id": "call_35532ef3151e4dec90121652",
+            "name": "Glob",
+            "input": {
+              "pattern": "**/*",
+              "path": "D:\\note\\wiki\\entities"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "wiki\\entities\\Andrej Karpathy.md\nwiki\\entities\\Obsidian.md"
+          }
+        ],
+        "isExpanded": false,
+        "result": "现在我对 Wiki 的当前状态有了完整了解。lessons 目录存在但为空，已有 2 个概念页和 2 个实体页。下面是详细的 Transformer 架构学习路径规划。\n\n---\n\n## 计划：Transformer 架构深度学习路径\n\n### 概述\n\n这是一份覆盖 Transformer 从直觉理解到代码实现的完整学习规划。共划分为 **7 个章节（12-14 篇笔记）**，从序列模型的动机出发，逐层拆解 Self-Attention、Multi-Head Attention、位置编码、Encoder-Decoder 架构，最终用 PyTorch 从零实现完整的 Transformer，并延伸到 BERT/GPT 等变体。\n\n每篇笔记严格控制在 3000-5000 字，超出则拆分为上下篇。\n\n---\n\n### 章节规划总览\n\n| 章节 | 主题 | 预计篇数 | 难度 | 核心交付 |\n|------|------|----------|------|----------|\n| 1 | 序列建模的前 Transformer 时代 | 1 | beginner | 理解 RNN/LSTM 的局限与 Transformer 的动机 |\n| 2 | Self-Attention 机制 | 2 | intermediate | 深入理解 Q/K/V、Scaled Dot-Product、Masking |\n| 3 | Multi-Head Attention 与残差连接 | 1 | intermediate | 多头并行注意力、残差网络、Layer Norm |\n| 4 | 位置编码 | 1 | intermediate | 正弦位置编码、可学习位置编码、RoPE |\n| 5 | Encoder-Decoder 架构全貌 | 2 | advanced | 完整架构图、数据流、训练与推理流程 |\n| 6 | PyTorch 从零实现 | 3 | advanced | 逐模块实现完整 Transformer |\n| 7 | Transformer 变体与演进 | 2 | advanced | BERT、GPT、T5、Vision Transformer |\n\n---\n\n### 各章节详细规划\n\n#### 第 1 章：序列建模的前 Transformer 时代（1 篇）\n\n**文件**：`wiki/lessons/transformer-01-sequence-modeling.md`\n\n**核心内容**：\n- 语言模型的基本思想：根据历史预测下一个词\n- RNN 的工作原理与梯度消失/爆炸问题\n- LSTM/GRU 的改进与残余局限（长程依赖、顺序计算瓶颈）\n- Seq2Seq + Attention 的突破：Bahdanau Attention\n- Transformer 的动机：并行化、全局感受野、摆脱递归\n\n**学习目标**：\n- [ ] 能解释 RNN/LSTM 的核心机制与局限\n- [ ] 理解为什么需要 Attention 机制\n- [ ] 能说出 Transformer 相对于 RNN 的三大优势\n\n**搜索策略**：\n- 论文：Hochreiter & Schmidhuber (1997) \"Long Short-Term Memory\"\n- 论文：Bahdanau et al. (2014) \"Neural Machine Translation by Jointly Learning to Align and Translate\"\n- 博客：Christopher Olah \"Understanding LSTM Networks\"\n- 博客：Jay Alammar 的 Attention 通俗解释\n\n**依赖**：无（入口章节）\n**思考题设计**：4-5 道，涵盖 LSTM 门控直觉、梯度消失原因、Attention 的本质\n\n---\n\n#### 第 2 章：Self-Attention 机制（2 篇）\n\n**文件 2a**：`wiki/lessons/transformer-02a-self-attention.md`\n**文件 2b**：`wiki/lessons/transformer-02b-self-attention-deep.md`\n\n**2a 核心内容（直觉与基本机制）**：\n- 从 Attention 到 Self-Attention 的演进\n- Query、Key、Value 的直觉：图书馆检索类比\n- 点积注意力计算步骤（逐步数值示例）\n- Scaled Dot-Product Attention 的公式：`softmax(QK^T / sqrt(d_k)) * V`\n- 为什么需要缩放（除以 sqrt(d_k)）\n\n**2b 核心内容（深入细节与 Masking）**：\n- Self-Attention 的矩阵形式推导（从标量到矩阵）\n- 计算复杂度分析：O(n^2 * d) 的代价\n- Padding Mask：忽略填充位置\n- Causal Mask（Look-ahead Mask）：防止看到未来信息\n- Masked Self-Attention 的具体实现逻辑\n- 数值稳定性：softmax 中的 max 减法技巧\n\n**学习目标**：\n- [ ] 能手推 Self-Attention 的计算过程\n- [ ] 理解 Q/K/V 的物理含义\n- [ ] 能解释缩放因子的作用\n- [ ] 能区分 Padding Mask 和 Causal Mask 的使用场景\n\n**搜索策略**：\n- 论文：Vaswani et al. (2017) \"Attention Is All You Need\" — 第 3 节\n- 博客：Jay Alammar \"The Illustrated Transformer\"\n- 博客：Lilian Weng \"Attention? Attention!\"\n- 视频：3Blue1Brown \"Attention in transformers, visually explained\"\n- 代码参考：The Annotated Transformer (Harvard NLP)\n\n**依赖**：第 1 章\n\n---\n\n#### 第 3 章：Multi-Head Attention 与残差连接（1 篇）\n\n**文件**：`wiki/lessons/transformer-03-multihead-residual.md`\n\n**核心内容**：\n- 为什么需要多头：不同子空间关注不同模式\n- Multi-Head 的计算：并行 h 个头，拼接，线性投影\n- 头数 h 与维度 d_k 的关系：d_model = h * d_k\n- 残差连接（Residual Connection）的作用：梯度流通、信息高速公路\n- Layer Normalization：对每个样本独立归一化\n- Pre-Norm vs Post-Norm 的区别与 trade-off\n- 完整的 Sublayer 结构：`LayerNorm(x + Sublayer(x))`\n\n**学习目标**：\n- [ ] 能画出 Multi-Head Attention 的数据流图\n- [ ] 理解残差连接为什么对深层网络至关重要\n- [ ] 能解释 Pre-Norm 和 Post-Norm 的区别\n\n**搜索策略**：\n- 论文：Vaswani et al. (2017) 第 3.2 节\n- 论文：Ba et al. (2016) \"Layer Normalization\"\n- 博客：Lilian Weng 关于 Transformer 细节的博文\n- 代码参考：The Annotated Transformer MultiHeadAttention 类\n\n**依赖**：第 2 章\n\n---\n\n#### 第 4 章：位置编码（1 篇）\n\n**文件**：`wiki/lessons/transformer-04-positional-encoding.md`\n\n**核心内容**：\n- 为什么需要位置编码：Self-Attention 是置换不变的（permutation equivariant 的澄清）\n- 正弦位置编码的公式推导与直觉\n- 为什么用三角函数：相对位置的可学习性\n- 可学习位置编码（BERT 风格）vs 固定位置编码\n- 旋转位置编码（RoPE）的原理与优势（用于 LLaMA 等）\n- 位置编码的代码实现对比\n\n**学习目标**：\n- [ ] 能写出正弦位置编码的公式并解释每个符号\n- [ ] 理解为什么三角函数可以编码相对位置关系\n- [ ] 了解 RoPE 的核心思想\n\n**搜索策略**：\n- 论文：Vaswani et al. (2017) 第 3.5 节\n- 论文：Su et al. (2021) \"RoFormer\" (RoPE)\n- 博客：Amirhossein Kazemnejad \"Transformer Architecture: The Positional Encoding\"\n\n**依赖**：第 2 章\n\n---\n\n#### 第 5 章：Encoder-Decoder 架构全貌（2 篇）\n\n**文件 5a**：`wiki/lessons/transformer-05a-architecture-overview.md`\n**文件 5b**：`wiki/lessons/transformer-05b-training-and-inference.md`\n\n**5a 核心内容（架构图解）**：\n- 完整的 Transformer 架构图（逐层拆解）\n- Encoder 堆叠：N=6 层，每层 = Multi-Head Attention + FFN\n- Decoder 堆叠：N=6 层，额外增加 Cross-Attention 层\n- Cross-Attention：Decoder 如何关注 Encoder 的输出\n- Feed-Forward Network：两层线性变换 + ReLU\n- Embedding 与 Softmax 的权重共享\n- 完整数据流追踪：一个句子的编码-解码全过程\n\n**5b 核心内容（训练与推理）**：\n- 训练流程：Teacher Forcing、Label Smoothing（epsilon=0.1）\n- 损失函数：Cross-Entropy Loss\n- 学习率调度：Warmup + Cosine/Inverse Square Root Decay\n- 推理流程：自回归生成、Beam Search、温度采样\n- KV Cache 的原理与加速效果\n\n**学习目标**：\n- [ ] 能不看图手画出完整 Transformer 架构\n- [ ] 能追踪一个 batch 数据从输入到输出的完整流程\n- [ ] 理解训练和推理在 Decoder 行为上的差异\n- [ ] 能解释 KV Cache 为什么能加速推理\n\n**搜索策略**：\n- 论文：Vaswani et al. (2017) 完整论文\n- 博客：Jay Alammar \"The Illustrated Transformer\"\n- 博客：Lilian Weng \"Transformer Family\"\n- 代码参考：The Annotated Transformer 完整实现\n- KV Cache 博客：Kipp et al. 的通俗解释\n\n**依赖**：第 2、3、4 章\n\n---\n\n#### 第 6 章：PyTorch 从零实现（3 篇）\n\n**文件 6a**：`wiki/lessons/transformer-06a-attention-impl.md`\n**文件 6b**：`wiki/lessons/transformer-06b-encoder-decoder-impl.md`\n**文件 6c**：`wiki/lessons/transformer-06c-training-impl.md`\n\n**6a 核心内容（Attention 模块实现）**：\n- 环境配置与项目结构\n- `ScaledDotProductAttention` 类实现（含 mask 处理）\n- `MultiHeadAttention` 类实现\n- 位置编码模块实现\n- 单元测试与维度验证\n\n**6b 核心内容（Encoder/Decoder 实现）**：\n- `PositionwiseFeedForward` 类\n- `EncoderLayer` 和 `Encoder` 类\n- `DecoderLayer` 和 `Decoder` 类（含 Cross-Attention）\n- `Transformer` 主类组装\n- 参数初始化策略（Xavier Uniform）\n\n**6c 核心内容（训练流程实现）**：\n- Tokenizer 与数据预处理\n- 训练循环实现（含 Warmup LR Scheduler）\n- 损失函数与 Label Smoothing\n- 推理函数（贪心解码 / Beam Search）\n- 在一个小型翻译任务上验证\n\n**学习目标**：\n- [ ] 能独立用 PyTorch 实现完整 Transformer\n- [ ] 理解每个模块的输入输出维度\n- [ ] 能调试维度不匹配的问题\n- [ ] 能在真实数据上训练并评估\n\n**搜索策略**：\n- 代码参考：The Annotated Transformer (Harvard NLP, PyTorch 版)\n- 代码参考：Karpathy \"nanoGPT\"\n- 代码参考：PyTorch 官方 `nn.Transformer` 源码\n- 教程：PyTorch 官方 \"Language Translation with nn.Transformer\"\n\n**依赖**：第 5 章\n\n---\n\n#### 第 7 章：Transformer 变体与演进（2 篇）\n\n**文件 7a**：`wiki/lessons/transformer-07a-bert-gpt.md`\n**文件 7b**：`wiki/lessons/transformer-07a-efficient-transformers.md`\n\n**7a 核心内容（BERT 与 GPT）**：\n- Encoder-Only（BERT）：Masked Language Model + Next Sentence Prediction\n- Decoder-Only（GPT 系列）：自回归语言模型\n- Encoder-Decoder（T5、BART）：序列到序列\n- 三种架构的适用场景对比\n- GPT-2 → GPT-3 → GPT-4 的演进脉络\n- 预训练 + 微调范式的意义\n\n**7b 核心内容（高效 Transformer 与多模态）**：\n- Efficient Attention：Linformer、Performer、Flash Attention\n- 稀疏注意力：Longformer、BigBird\n- Vision Transformer（ViT）：图像分块 + Transformer\n- 多模态 Transformer：CLIP、Flamingo\n- Mixture of Experts（MoE）与 Transformer 的结合\n- Transformer 的局限性与发展方向\n\n**学习目标**：\n- [ ] 能区分 Encoder-Only / Decoder-Only / Encoder-Decoder 三族\n- [ ] 理解 Flash Attention 的核心优化思路\n- [ ] 了解 ViT 如何将图像转化为序列输入\n- [ ] 能说出 Transformer 架构 2017-2026 的主要演进脉络\n\n**搜索策略**：\n- 论文：Devlin et al. (2018) \"BERT\"\n- 论文：Radford et al. (2018/2019) \"GPT/GPT-2\"\n- 论文：Dosovitskiy et al. (2020) \"An Image is Worth 16x16 Words\"\n- 论文：Dao et al. (2022) \"FlashAttention\"\n- 博客：Lilian Weng \"Transformer Family\"\n- 综述：Tay et al. (2020) \"Efficient Transformers: A Survey\"\n\n**依赖**：第 5 章\n\n---\n\n### 执行顺序与依赖图\n\n```\n第 1 章（序列建模）\n     ↓\n第 2 章（Self-Attention）  ←── 第 4 章（位置编码）[可与第 3 章并行学习]\n     ↓\n第 3 章（Multi-Head + 残差）\n     ↓\n第 5 章（架构全貌）\n     ↓\n第 6 章（代码实现）\n     ↓\n第 7 章（变体与演进）\n```\n\n**关键依赖**：\n- 第 1 章 → 第 2 章（必须先理解 Attention 的动机）\n- 第 2 章 → 第 3、4 章（理解 Self-Attention 后才能学多头和位置编码）\n- 第 3、4 章 → 第 5 章（需要所有组件知识才能理解完整架构）\n- 第 5 章 → 第 6 章（理解架构后才能实现）\n- 第 5 章 → 第 7 章（理解原版才能理解变体）\n\n**可并行学习的章节**：第 3 章和第 4 章互不依赖，可并行。\n\n---\n\n### 搜索策略总览\n\n每章搜索时按以下优先级获取资源：\n\n| 优先级 | 资源类型 | 来源 | 用途 |\n|--------|----------|------|------|\n| 1 | 经典论文 | arXiv | 公式推导、原始定义 |\n| 2 | 知名博客 | Jay Alammar、Lilian Weng、Karpathy | 通俗解释、可视化 |\n| 3 | 视频教程 | 3Blue1Brown、Karpathy YouTube | 直觉建立 |\n| 4 | 代码参考 | The Annotated Transformer、nanoGPT | 实现细节 |\n| 5 | 教科书 | \"Speech and Language Processing\" (Jurafsky) | 系统性补充 |\n\n---\n\n### 写入策略\n\n1. **逐章执行**：每章完成搜索 + 写作后再进入下一章\n2. **长文档分段写入**：每篇笔记分 2-3 次写入，避免超时\n3. **每篇完成后立即更新**：`wiki/index.md` 和 `wiki/log.md`\n4. **关联创建**：在适当时候创建 `wiki/concepts/transformer.md`、`wiki/entities/Ashish Vaswani.md` 等关联页面\n\n---\n\n### 预期产出文件清单\n\n```\nwiki/lessons/transformer-01-sequence-modeling.md\nwiki/lessons/transformer-02a-self-attention.md\nwiki/lessons/transformer-02b-self-attention-deep.md\nwiki/lessons/transformer-03-multihead-residual.md\nwiki/lessons/transformer-04-positional-encoding.md\nwiki/lessons/transformer-05a-architecture-overview.md\nwiki/lessons/transformer-05b-training-and-inference.md\nwiki/lessons/transformer-06a-attention-impl.md\nwiki/lessons/transformer-06b-encoder-decoder-impl.md\nwiki/lessons/transformer-06c-training-impl.md\nwiki/lessons/transformer-07a-bert-gpt.md\nwiki/lessons/transformer-07b-efficient-transformers.md\n```\n\n共 12 篇笔记，约 36000-60000 字。每篇使用 `_templates/lesson.md` 模板，设置 `series.name: \"Transformer 深度学习\"` 和对应的 `series.part`。\n\n---\n\n### 风险与缓解\n\n| 风险 | 缓解措施 |\n|------|----------|\n| 单篇笔记超出 5000 字限制 | 强制拆分为 a/b 篇，保持每篇聚焦 |\n| 代码实现部分过长 | 代码使用折叠 callout，正文只保留关键片段 |\n| 搜索资源不够深入 | 每章至少引用 2 篇论文 + 2 篇博客 + 1 个代码参考 |\n| 数学公式在 Obsidian 中渲染问题 | 使用 LaTeX 语法 `$$...$$`，确保 Obsidian 兼容 |\n| 章节间内容重复 | 每章开头明确\"本章节聚焦\"，交叉引用而非重复 |\n\n---\n\n### 验证清单\n\n- [ ] 每篇笔记 3000-5000 字\n- [ ] 每篇笔记使用 lesson 模板，frontmatter 完整\n- [ ] 每篇笔记包含 2-3 道基础思考题 + 1-2 道进阶题\n- [ ] 思考题使用 `> [!hint]-` 和 `> [!success]-` callout\n- [ ] 代码实现篇的代码可运行\n- [ ] 所有 12 篇笔记写入 `wiki/lessons/` 目录\n- [ ] `wiki/index.md` 更新学习笔记统计和目录\n- [ ] `wiki/log.md` 追加每次写入的记录\n- [ ] 必要时创建关联的 concepts/entities 页面\n\n---\n\n这就是完整的规划。准备好开始后，告诉我从哪一章开始，我会按 Learn 工作流执行搜索、组织和写入。建议从 **第 1 章：序列建模的前 Transformer 时代** 开始。"
+      }
+    }
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

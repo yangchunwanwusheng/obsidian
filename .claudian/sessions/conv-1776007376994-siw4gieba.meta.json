@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776007376994-siw4gieba",
+  "providerId": "claude",
+  "title": "Audit manuscript structure and chapter content",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776007376997,
+  "updatedAt": 1776007636452,
+  "lastResponseAt": 1776007609375,
+  "sessionId": "d59d278b-0bbe-4328-97b9-08f09ae8d2e9",
+  "providerState": {
+    "providerSessionId": "d59d278b-0bbe-4328-97b9-08f09ae8d2e9"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

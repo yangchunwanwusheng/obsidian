@@ -1,0 +1,13 @@
+{
+  "id": "conv-1776487153567-3lrawv76x",
+  "providerId": "claude",
+  "title": "<think>\n用户给了一个非常简短的请求：\"这是一个专门用于科研的工作区\"。这是关于创建一个...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776487153568,
+  "updatedAt": 1776487170419,
+  "lastResponseAt": 1776487166093,
+  "sessionId": "032aa073-9d83-4bae-a652-ce4f022ac31f",
+  "providerState": {
+    "providerSessionId": "032aa073-9d83-4bae-a652-ce4f022ac31f"
+  }
+}

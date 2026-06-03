@@ -1,0 +1,22 @@
+{
+  "id": "conv-1779711416195-h8ifmxwls",
+  "providerId": "claude",
+  "title": "<think>The user wants me to create a deep-dive ...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1779711416196,
+  "updatedAt": 1779810630553,
+  "lastResponseAt": 1779714349664,
+  "sessionId": "5156f3bb-8c0a-4c29-af24-c3b4e2239d9f",
+  "providerState": {
+    "providerSessionId": "5156f3bb-8c0a-4c29-af24-c3b4e2239d9f"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 570,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 233728,
+    "contextWindow": 1000000,
+    "contextTokens": 234298,
+    "percentage": 23
+  }
+}

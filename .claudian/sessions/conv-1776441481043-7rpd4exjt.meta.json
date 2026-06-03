@@ -1,0 +1,14 @@
+{
+  "id": "conv-1776441481043-7rpd4exjt",
+  "providerId": "claude",
+  "title": "<think>\nThe user wants to research \"agent memor...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776441481043,
+  "updatedAt": 1776441506024,
+  "lastResponseAt": 1776441502911,
+  "sessionId": "3c0c583c-1266-4aea-9aac-be79c24d2d1b",
+  "providerState": {
+    "providerSessionId": "3c0c583c-1266-4aea-9aac-be79c24d2d1b"
+  },
+  "currentNote": "CLAUDE.md"
+}

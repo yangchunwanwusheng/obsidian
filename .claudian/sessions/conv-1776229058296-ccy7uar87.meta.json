@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776229058296-ccy7uar87",
+  "providerId": "claude",
+  "title": "Explain Claude Code agent token display",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776229058296,
+  "updatedAt": 1776264202545,
+  "lastResponseAt": 1776229082937,
+  "sessionId": "2d6de00d-75d3-42ad-a680-61902489244d",
+  "providerState": {
+    "providerSessionId": "2d6de00d-75d3-42ad-a680-61902489244d"
+  },
+  "currentNote": "research/_inbox/first-reading-ideas.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1775904505983-rl0pm5ova",
+  "providerId": "claude",
+  "title": "深度分析微信小游戏爆火逻辑",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775904505983,
+  "updatedAt": 1775911991156,
+  "lastResponseAt": 1775905077400,
+  "sessionId": "80de039f-e0ad-4d64-9b13-f58e2b766f22",
+  "providerState": {
+    "providerSessionId": "80de039f-e0ad-4d64-9b13-f58e2b766f22"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

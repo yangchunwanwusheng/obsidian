@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"C:\\\\Users\\\\oobbee\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official\\\\plugins\\\\ralph-loop\" \"C:\\\\Users\\\\oobbee\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official\\\\plugins\\\\ralph-loop.disabled\")",
+      "Bash(rm -rf \"C:\\\\Users\\\\oobbee\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official\\\\plugins\\\\ralph-loop.disabled\")",
+      "Read(//c/Users/oobbee/.claude/plugins/marketplaces/claude-plugins-official/plugins/hookify/hooks/**)",
+      "Bash(dir \"C:\\\\Users\\\\oobbee\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official\\\\plugins\"\")",
+      "Read(//c/Users/oobbee/.claude/plugins/marketplaces/claude-plugins-official/plugins/**)"
+    ]
+  }
+}

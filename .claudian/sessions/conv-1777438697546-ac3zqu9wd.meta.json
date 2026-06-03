@@ -1,0 +1,14 @@
+{
+  "id": "conv-1777438697546-ac3zqu9wd",
+  "providerId": "claude",
+  "title": "<think>\n用户想要：\n1. 学习 langchain 1.0 框架\n2. 开发一个 ha...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1777438697546,
+  "updatedAt": 1777445224826,
+  "lastResponseAt": 1777445192886,
+  "sessionId": "aa20f981-7929-4a84-843c-f66bc6249ac0",
+  "providerState": {
+    "providerSessionId": "aa20f981-7929-4a84-843c-f66bc6249ac0"
+  },
+  "currentNote": "raw/lessons/LangGraph/01-langgraph-overview.md"
+}

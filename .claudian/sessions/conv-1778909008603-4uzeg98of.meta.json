@@ -1,0 +1,23 @@
+{
+  "id": "conv-1778909008603-4uzeg98of",
+  "providerId": "claude",
+  "title": "<think>用户想了解 \"The G²CP Protocol\"，这是一个协议定义，需要深入浅...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778909008603,
+  "updatedAt": 1778912207684,
+  "lastResponseAt": 1778911226100,
+  "sessionId": "02120f36-ebae-4435-b3a6-ca18e01eaef2",
+  "providerState": {
+    "providerSessionId": "02120f36-ebae-4435-b3a6-ca18e01eaef2"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

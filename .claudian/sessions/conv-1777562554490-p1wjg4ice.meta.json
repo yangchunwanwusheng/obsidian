@@ -1,0 +1,24 @@
+{
+  "id": "conv-1777562554490-p1wjg4ice",
+  "providerId": "claude",
+  "title": "目前建议我学习的课程顺序是什么是什么，我已学完langgraph",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1777562554490,
+  "updatedAt": 1778130726630,
+  "lastResponseAt": 1777562894018,
+  "sessionId": "8f45221e-41b2-4759-a759-306d495b6d82",
+  "providerState": {
+    "providerSessionId": "8f45221e-41b2-4759-a759-306d495b6d82"
+  },
+  "currentNote": "raw/lessons/full-plan.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

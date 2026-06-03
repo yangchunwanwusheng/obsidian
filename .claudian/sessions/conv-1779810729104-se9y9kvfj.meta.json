@@ -1,0 +1,23 @@
+{
+  "id": "conv-1779810729104-se9y9kvfj",
+  "providerId": "claude",
+  "title": "这个架构图全景我看不懂，主要在于我不理解什么是Nginx，而且也不知道该架构图是什么。",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779810729110,
+  "updatedAt": 1779868149799,
+  "lastResponseAt": 1779810922553,
+  "sessionId": "f47edf18-2aea-428c-8a8a-d6d57c0648fd",
+  "providerState": {
+    "providerSessionId": "f47edf18-2aea-428c-8a8a-d6d57c0648fd"
+  },
+  "currentNote": "raw/lessons/ai-interview/01-architecture-overview.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

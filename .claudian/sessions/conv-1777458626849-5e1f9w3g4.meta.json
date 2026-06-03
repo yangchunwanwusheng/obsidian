@@ -1,0 +1,23 @@
+{
+  "id": "conv-1777458626849-5e1f9w3g4",
+  "providerId": "claude",
+  "title": "<think>The user is asking \"该行什么意思\" which means ...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1777458626849,
+  "updatedAt": 1778988111195,
+  "lastResponseAt": 1778988100304,
+  "sessionId": "bd673ff0-7e03-49ee-b100-f89a013aff39",
+  "providerState": {
+    "providerSessionId": "bd673ff0-7e03-49ee-b100-f89a013aff39"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": false
+  }
+}

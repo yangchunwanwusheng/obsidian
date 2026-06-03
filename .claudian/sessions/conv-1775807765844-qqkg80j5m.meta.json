@@ -1,0 +1,23 @@
+{
+  "id": "conv-1775807765844-qqkg80j5m",
+  "providerId": "claude",
+  "title": "调研番茄小说灵异男频文写作要点",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775807765844,
+  "updatedAt": 1775808595650,
+  "lastResponseAt": 1775808581870,
+  "sessionId": "2b17405f-f5f9-4bcc-ac3c-161ea3677795",
+  "providerState": {
+    "providerSessionId": "2b17405f-f5f9-4bcc-ac3c-161ea3677795"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

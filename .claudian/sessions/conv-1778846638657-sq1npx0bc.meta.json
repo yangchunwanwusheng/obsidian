@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778846638657-sq1npx0bc",
+  "providerId": "claude",
+  "title": "<think>The user wants me to add requirements fo...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778846638658,
+  "updatedAt": 1778912334492,
+  "lastResponseAt": 1778847116196,
+  "sessionId": "aab43acc-e636-4bf9-b7c0-16732c73e4e5",
+  "providerState": {
+    "providerSessionId": "aab43acc-e636-4bf9-b7c0-16732c73e4e5"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

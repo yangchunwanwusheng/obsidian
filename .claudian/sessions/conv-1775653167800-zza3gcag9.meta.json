@@ -1,0 +1,24 @@
+{
+  "id": "conv-1775653167800-zza3gcag9",
+  "providerId": "claude",
+  "title": "整理Karpathy的Obsidian本地知识库工作流",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775653167803,
+  "updatedAt": 1775912218902,
+  "lastResponseAt": 1775659921915,
+  "sessionId": "3a6114a6-431e-46fc-bad0-941de6129651",
+  "providerState": {
+    "providerSessionId": "3a6114a6-431e-46fc-bad0-941de6129651"
+  },
+  "currentNote": "news/26.4.8Karpathy/initial.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

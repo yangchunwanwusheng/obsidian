@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776078595739-04cnom3i8",
+  "providerId": "claude",
+  "title": "规划续写人间镇陵人小说30-35章",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776078595739,
+  "updatedAt": 1776083740108,
+  "lastResponseAt": 1776078778936,
+  "sessionId": "f58084c2-8392-406c-abe0-891641a02e39",
+  "providerState": {
+    "providerSessionId": "f58084c2-8392-406c-abe0-891641a02e39"
+  },
+  "currentNote": "人间镇陵人/正文/卷一-遗物/004-镜中人.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

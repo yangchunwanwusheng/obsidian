@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778130748577-rk7i0p8ut",
+  "providerId": "claude",
+  "title": "<think>用户想要我帮助查找论文并下载到 raw 目录中。这是一个相对简单的任务，不需要复...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778130748577,
+  "updatedAt": 1778133236329,
+  "lastResponseAt": 1778132178056,
+  "sessionId": "3c00f19a-e749-42bc-a7cf-f2bc6054ba5b",
+  "providerState": {
+    "providerSessionId": "3c00f19a-e749-42bc-a7cf-f2bc6054ba5b"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

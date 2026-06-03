@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776843161097-fx7yhm00a",
+  "providerId": "claude",
+  "title": "<think>用户想要我生成一个标题，总结这个对话/任务。让我分析一下用户的需求：\n\n1. 用...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776843161098,
+  "updatedAt": 1777283993640,
+  "lastResponseAt": 1776844805340,
+  "sessionId": "c59e8b3f-e244-410a-bc85-6e6cd44898eb",
+  "providerState": {
+    "providerSessionId": "c59e8b3f-e244-410a-bc85-6e6cd44898eb"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

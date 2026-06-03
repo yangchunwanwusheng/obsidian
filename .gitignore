@@ -1,0 +1,22 @@
+# === Obsidian ===
+# Workspace files are device-specific (layout, open panes)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Trash
+.trash/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Temporary / Cache ===
+*.tmp
+*.bak
+*.swp
+*~
+
+# === Claude Code session cache ===
+.claude/cache/
+.claude/transcripts/

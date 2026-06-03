@@ -1,0 +1,23 @@
+{
+  "id": "conv-1775655016031-cbsrp5dp7",
+  "providerId": "claude",
+  "title": "Rename file to English filename",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775655016031,
+  "updatedAt": 1775887402878,
+  "lastResponseAt": 1775661801012,
+  "sessionId": "4e06d60c-1e06-4a06-8982-0ad2688cdd6f",
+  "providerState": {
+    "providerSessionId": "4e06d60c-1e06-4a06-8982-0ad2688cdd6f"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

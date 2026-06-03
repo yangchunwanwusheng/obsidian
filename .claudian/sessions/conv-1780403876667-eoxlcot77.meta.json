@@ -1,0 +1,22 @@
+{
+  "id": "conv-1780403876667-eoxlcot77",
+  "providerId": "claude",
+  "title": "<think>The user wants me to read two papers abo...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780403876668,
+  "updatedAt": 1780407536315,
+  "lastResponseAt": 1780407536315,
+  "sessionId": "7e34aa3d-da91-4d3c-94d8-d01ae7676dd0",
+  "providerState": {
+    "providerSessionId": "7e34aa3d-da91-4d3c-94d8-d01ae7676dd0"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 300,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 258816,
+    "contextWindow": 1000000,
+    "contextTokens": 259116,
+    "percentage": 26
+  }
+}

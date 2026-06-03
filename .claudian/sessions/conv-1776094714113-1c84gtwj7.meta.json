@@ -1,0 +1,22 @@
+{
+  "id": "conv-1776094714113-1c84gtwj7",
+  "providerId": "claude",
+  "title": "续写人间镇陵人小说30-35章",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776094714113,
+  "updatedAt": 1776095598208,
+  "lastResponseAt": 1776095592249,
+  "sessionId": "5004b81c-e598-4fd0-b7c9-9452f5549040",
+  "providerState": {
+    "providerSessionId": "5004b81c-e598-4fd0-b7c9-9452f5549040"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 78472,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 30115,
+    "contextWindow": 200000,
+    "contextTokens": 108587,
+    "percentage": 54
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1775820177591-n7sap036n",
+  "providerId": "claude",
+  "title": "Create WeChat Mini Games with Cocos Creator and AI",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775820177592,
+  "updatedAt": 1775820894904,
+  "lastResponseAt": 1775820651780,
+  "sessionId": "cac1b96a-fcf0-4da3-8a85-d8cad5cb873e",
+  "providerState": {
+    "providerSessionId": "cac1b96a-fcf0-4da3-8a85-d8cad5cb873e"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

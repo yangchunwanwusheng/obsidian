@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776787328889-szogmp6z1",
+  "providerId": "claude",
+  "title": "<think>\nThe user is asking for clarification ab...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776787328889,
+  "updatedAt": 1776843089832,
+  "lastResponseAt": 1776789893305,
+  "sessionId": "e9f55fd5-bbd3-4a0f-bc62-e9df15037912",
+  "providerState": {
+    "providerSessionId": "e9f55fd5-bbd3-4a0f-bc62-e9df15037912"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

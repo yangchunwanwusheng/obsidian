@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776078314262-i3ctacb50",
+  "providerId": "claude",
+  "title": "规划续写《人间镇陵人》第30-35章",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776078314262,
+  "updatedAt": 1776078575753,
+  "lastResponseAt": 1776078506194,
+  "sessionId": "55c330b6-a3be-457c-9cdf-66e1b5f6c070",
+  "providerState": {
+    "providerSessionId": "55c330b6-a3be-457c-9cdf-66e1b5f6c070"
+  },
+  "currentNote": "人间镇陵人/正文/卷一-遗物/029-寄言.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

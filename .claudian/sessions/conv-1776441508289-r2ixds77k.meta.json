@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776441508289-r2ixds77k",
+  "providerId": "claude",
+  "title": "<think>\n用户希望我帮助他研究 agent memory 方向的论文，并希望我对相关论文...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776441508289,
+  "updatedAt": 1776441653182,
+  "lastResponseAt": 1776441642753,
+  "sessionId": "cfd035bd-4738-4df7-876a-bb9005abb9e1",
+  "providerState": {
+    "providerSessionId": "cfd035bd-4738-4df7-876a-bb9005abb9e1"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
