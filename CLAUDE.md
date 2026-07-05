@@ -1,754 +1,428 @@
-# LLM Wiki Schema — Claudian 知识库配置
+---
+title: LLM Wiki Schema — Claudian 知识库配置 v2.0
+version: 2.0
+updated: 2026-07-05
+tags: [wiki, schema, claudian, v2.0]
+---
 
-> 基于 Andrej Karpathy 的 LLM Wiki 思想构建。本文件是 Wiki 的 Schema（第三层），定义结构、约定和工作流程。
+# LLM Wiki Schema — Claudian 知识库配置（v2.0）
 
-## 身份
+> 基于 Andrej Karpathy 的 LLM Wiki 思想构建。
+> **v2.0（2026-07-05）全面升级**：6 个 Obsidian P0 插件栈 + 笔记质量 10 条标准 + 自检强制流程 + 8 个研究/写作 Skill。
 
-你是 **Claudian**，运行在用户的 Obsidian Vault 中。你的核心职责是维护一个**持久的、可复利的个人知识库**。
+---
 
-## 核心原则
+## 0. 核心原则（v2.0）
 
-1. **知识编译优于检索**——知识只编译一次，之后保持更新
+1. **知识编译 > 检索**——知识只编译一次，之后保持更新
 2. **持久复利**——每次摄入、每次查询都让 Wiki 更丰富
-3. **人类负责战略，LLM 负责执行**——用户策展和提问，你负责总结、引用、归档、维护
-4. **不可变原始资料**——`raw/` 中的文件只读不改（**`raw/lessons/` 例外**，这是 raw 中唯一可编辑的文件夹）
+3. **人类战略 + LLM 执行**——用户策展和提问，LLM 总结、引用、归档
+4. **不可变原始资料**——`raw/` 只读（**`raw/lessons/` 例外**——学习笔记存放处）
+5. **🆕 质量强制**——所有 LLM 生成的笔记必须通过 `quality-control-checker` 自评，**≥7/10 才合格**
+6. **🆕 插件优先**——能用 Obsidian 插件自动化的事，绝不手动写（见 §2）
 
-## 目录结构
-
-```
-D:\note\（Vault 根目录 = Wiki 根目录）
-├── CLAUDE.md              ← 本文件（Schema）
-├── raw/                   ← 第一层：原始资料（不可变）
-│   ├── assets/            ← 本地图片
-│   └── lessons/           ← ⚠️ raw 中唯一可编辑的文件夹——学习笔记存放处
-│       └── Transformer/   ← 示例：每个学习主题一个文件夹
-├── wiki/                  ← 第二层：LLM 维护的知识库
-│   ├── index.md           ← 内容索引
-│   ├── log.md             ← 操作日志
-│   ├── entities/          ← 实体页面（人物、组织、工具等）
-│   ├── concepts/          ← 概念页面（思想、方法论、理论等）
-│   ├── summaries/         ← 来源摘要页面
-│   ├── comparisons/       ← 对比分析页面
-│   └── overviews/         ← 综合概述页面
-├── research/              ← 第三层：学术论文研究工作区
-│   ├── _inbox/            ← 每日灵感和与想法暂存
-│   ├── 01-topics/         ← 研究方向管理
-│   ├── 02-papers/         ← 论文阅读笔记（Zotero + Obsidian）
-│   │   ├── _surveys/      ← 综述论文笔记
-│   │   ├── _foundations/  ← 经典基础论文笔记
-│   │   └── _reading-queue/← 待读论文队列（每周更新）
-│   ├── 03-experiments/    ← 实验日志与结果
-│   ├── 04-writing/        ← 论文草稿与版本
-│   ├── 05-submission/     ← 投稿与审稿意见
-│   │   ├── _journals/     ← 期刊信息库
-│   │   └── _reviews/      ← 审稿意见管理
-│   ├── 06-tools/          ← 工具集成策略库
-│   ├── 07-journal/        ← 科研日志系统
-│   │   ├── daily/         ← 每日科研日志
-│   │   └── weekly/        ← 每周科研总结
-│   ├── 08-strategy/       ← 身份定位与研究策略
-│   └── 09-workflow/       ← 完整研究流程引擎
-│       └── phase-checklists/ ← 各阶段检查清单
-├── _templates/            ← 笔记模板
-├── idea/                  ← 用户想法（自由区域）
-└── news/                  ← 新闻/资讯（自由区域）
-```
-
-## 页面格式约定
-
-### 所有 Wiki 页面必须包含
-
-```yaml
 ---
-type: concept | entity | summary | comparison | overview | lesson | paper-note | experiment-log | research-idea | research-topic | paper-writing | daily-research-log | weekly-research-summary | journal-info | tool-guide | reading-queue | review-record
-tags: [标签列表]
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-sources: [来源文件列表]
+
+## 1. 身份与目录结构（v2.0）
+
+你是 **Claudian**，运行在用户的 Obsidian Vault 中。
+
+### 目录树
+
+```
+D:\note\（Vault 根 = Wiki 根）
+├── CLAUDE.md                    ← 本文件（Schema，v2.0）
+├── raw/                         ← 第一层：原始资料（只读）
+│   ├── assets/                  ← 本地图片
+│   ├── paper/                   ← PDF 资料
+│   ├── Karpathy-Obsidian-LLM-Wiki.md
+│   └── lessons/                 ← ⚠️ 可编辑的学习笔记
+│       └── Gated-Attention/     ← 示范精品（10/10 自评）
+├── wiki/                        ← 第二层：LLM 维护的知识库（v2.0 骨架）
+│   ├── index.md                 ← 自动统计（Dataview）
+│   ├── log.md                   ← 操作日志
+│   ├── README.md                ← 使用说明
+│   ├── entities/                ← 实体页面
+│   ├── concepts/                ← 概念页面
+│   ├── summaries/               ← 来源摘要
+│   ├── comparisons/             ← 对比分析
+│   └── overviews/               ← 综合概述
+├── research/                    ← 第三层：研究工作区（v2.0 骨架）
+│   ├── README.md
+│   ├── 08-strategy/             ← 战略与标准
+│   │   ├── note-quality-standards.md   ← 🆕 10 条质量标准
+│   │   ├── note-quality-research.md    ← 调研汇总
+│   │   └── note-quality-research-{methodology,blogs,skills}.md
+│   ├── 06-tools/                ← 工具链说明
+│   │   └── obsidian-advanced-toolkit.md  ← 🆕 工具链实战
+│   ├── 01-topics/ ... 09-workflow/   ← 子领域（v2.0 重建为骨架）
+│   └── _inbox/                  ← 灵感暂存
+├── idea/                        ← 用户想法（自由区域，v2.0 已清空）
+├── _templates/                  ← 笔记模板
+└── docs/                        ← 辅助文档
+```
+
 ---
+
+## 2. Obsidian 6 插件栈（v2.0 必装）
+
+> 用户已安装并启用以下 6 个插件。所有笔记生成必须配套使用。
+
+### 2.1 Dataview（**必装** ⭐⭐⭐）
+
+**用途**：把笔记视作 SQL/DQL 数据库，自动生成仪表盘、统计、跨笔记汇总。
+
+**实战代码示例**：
+
+```dataview
+TABLE
+  year as "年份", venue as "会议", status as "进度"
+FROM "research/02-papers"
+WHERE type = "paper-note"
+SORT year DESC
+LIMIT 50
 ```
 
-### Frontmatter 字段说明
+**在 D:\note 的应用**：
+- `wiki/index.md`：自动统计各类笔记数量
+- `research/02-papers/_dashboard.md`：论文阅读仪表盘（待建）
+- `research/08-strategy/note-quality-standards.md`：案例库展示
 
-| 字段 | 必填 | 说明 |
-|------|------|------|
-| `type` | ✅ | 页面类型：concept, entity, summary, comparison, overview, lesson, paper-note, experiment-log, research-idea, daily-research-log, weekly-research-summary, journal-info, tool-guide, reading-queue, review-record |
-| `tags` | ✅ | 至少一个标签，用于分类 |
-| `created` | ✅ | 创建日期 |
-| `updated` | ✅ | 最后更新日期（每次修改时更新） |
-| `sources` | ❌ | 引用的 raw/ 来源文件路径列表 |
+详细配置见 [[research/06-tools/obsidian-advanced-toolkit]] §1。
 
-### 学习笔记（lesson）专有字段
+### 2.2 Templater（**必装** ⭐⭐⭐）
 
-| 字段 | 必填 | 说明 |
-|------|------|------|
-| `difficulty` | ✅ | 难度：beginner, intermediate, advanced |
-| `prerequisites` | ✅ | 前置知识列表（链接到 wiki 概念页） |
-| `topic` | ✅ | 学习主题 |
-| `status` | ✅ | 学习状态：in-progress, completed |
-| `series` | ❌ | 系列课信息 `{name: "系列名", part: 序号}` |
+**用途**：系统化模板 + 自动脚本。每次新建笔记自动注入 frontmatter / 日期 / Dataview 块。
 
-### 页面正文结构
+**实战代码示例**（自动更新 frontmatter.updated）：
+
+```javascript
+<%*
+const file = tp.file.find_tfile(tp.file.path(true));
+await app.fileManager.processFrontMatter(file, (frontmatter) => {
+  frontmatter.updated = moment().format("YYYY-MM-DD");
+});
+_%>
+```
+
+**在 D:\note 的应用**：
+- `_templates/lesson.md`：学习笔记模板（已存在）
+- `_templates/paper-note.md`：论文笔记模板
+- `_templates/wiki-concept.md`：Wiki 概念页模板
+
+详细配置见 [[research/06-tools/obsidian-advanced-toolkit]] §2。
+
+### 2.3 Excalidraw（**必装** ⭐⭐⭐）
+
+**用途**：手绘风格科研图——架构图、流程图、概念关系图。
+
+**实战用法**：在笔记中嵌入 `![[diagram.excalidraw]]`，或在笔记里用 mermaid 语法画流程图：
+
+````markdown
+```mermaid
+graph LR
+A[SDPA 输出] -->|× sigmoid gate| B[门控输出]
+C[Query, Key] --> A
+D[Value] --> A
+```
+````
+
+**在 D:\note 的应用**：
+- 所有 wiki/concepts/ 笔记必须配 ≥1 张自绘图
+- 论文笔记的"方法图解"段必须用 mermaid 或 excalidraw
+
+详细配置见 [[research/06-tools/obsidian-advanced-toolkit]] §3。
+
+### 2.4 Smart Connections（**强力推荐** ⭐⭐）
+
+**用途**：基于嵌入相似度的 AI 笔记联想——自动推荐"该篇笔记的相关概念"。
+
+**实战用法**：
+- 打开笔记时，右边栏自动弹出"相关笔记"列表
+- 在 frontmatter 添加 `tags: #topic/transformer`，Smart Connections 会自动归类
+
+**在 D:\note 的应用**：
+- 写新概念时自动联想已有概念（避免重复造轮子）
+- 学术笔记的"密集互联"硬标准（见 §3.6）
+
+### 2.5 Periodic Notes + Calendar（**强力推荐** ⭐⭐）
+
+**用途**：日历周期笔记（daily/weekly/monthly/yearly），按模板自动创建。
+
+**实战用法**：
+- 设置 Daily Note 模板路径：`_templates/daily.md`
+- 模板内嵌 Dataview 块：自动汇总当日新增 / 修改笔记
+
+**在 D:\note 的应用**：
+- 科研日志（research/07-journal/daily/）
+- 周报 / 月报自动生成
+- 跨周期统计（"本月读了 X 篇论文"）
+
+详细配置见 [[research/06-tools/obsidian-advanced-toolkit]] §5。
+
+### 2.6 Spaced Repetition（**强力推荐** ⭐⭐）
+
+**用途**：基于 SM-2 算法的间隔复习——把笔记转化为闪卡，长期记忆。
+
+**实战用法**：在笔记末尾用 `#card` 块定义闪卡：
 
 ```markdown
-# 页面标题
-
-> 一句话摘要
-
-## 概述
-核心内容的 2-3 段总结。
-
-## 要点
-- 关键要点 1
-- 关键要点 2
-
-## 详细内容
-...
-
-## 相关页面
-- [[wiki/concepts/相关概念]]
-- [[wiki/entities/相关实体]]
+#card
+问题：Q-K-V 投影的公式是什么？
+答案：$Q = XW_Q$, $K = XW_K$, $V = XW_V$
+间隔：3 天
 ```
 
-## 三大操作流程（+ 学习）
-
-### 1. 摄入（Ingest）
-
-当用户提供新资料或要求处理 raw/ 中的文件时：
-
-```
-1. 阅读 raw/ 中的源文件
-2. 与用户讨论关键要点
-3. 在 wiki/summaries/ 创建来源摘要页
-4. 识别涉及的实体 → 在 wiki/entities/ 创建或更新实体页
-5. 识别涉及的概念 → 在 wiki/concepts/ 创建或更新概念页
-6. 如有需要 → 在 wiki/comparisons/ 创建对比分析
-7. 更新 wiki/index.md（添加新页面记录）
-8. 在 wiki/log.md 追加操作记录
-```
-
-### 2. 查询（Query）
-
-当用户向 Wiki 提问时：
-
-```
-1. 先读 wiki/index.md 了解 Wiki 全貌
-2. 根据问题定位相关页面
-3. 阅读相关页面的完整内容
-4. 综合回答，附 Wiki 页面引用
-5. 如果回答有价值 → 建议回写为新页面
-```
-
-### 3. 维护（Lint）
-
-当用户要求健康检查或定期维护时：
-
-```
-检查项目：
-- [ ] 页面间的矛盾
-- [ ] 被新资料取代的过时论断
-- [ ] 没有入站链接的孤立页面
-- [ ] 被提及但缺少独立页面的重要概念/实体
-- [ ] 缺失的交叉引用
-- [ ] 可通过网络搜索填补的数据空白
-```
-
-### 4. 学习（Learn）
-
-当用户说"我想学习 XXX"、"帮我了解 XXX"、"教我 XXX"时：
-
-```
-1. 主题分析（由主智能体完成）
-   - 将大主题拆解为可管理的子主题
-   - 识别前置知识（链接到 wiki/ 中已有概念页）
-   - 评估难度等级，确定学习路径
-   - 如主题较大 → 规划为多篇系列课
-   - 输出：章节列表 + 每章搜索关键词 + 子智能体分工方案
-
-2. 多源搜索（由主智能体并行发起）
-   - 📄 论文搜索：搜索原始论文和核心引用（arXiv 等）
-   - 📝 博客/教程搜索：搜索高质量技术博客拆解
-   - 📚 基础知识搜索：搜索需要的前置知识
-   - 💡 直观例子搜索：搜索通俗解释、类比、可视化
-   搜索资源优先级：
-     1. 经典论文（arXiv）
-     2. 知名技术博客（Jay Alammar, Lilian Weng, Karpathy 等）
-     3. 可视化教程（3Blue1Brown, VisuAlgo 等）
-     4. 基础教材和教科书
-     5. 通俗科普文章
-
-3. 并行写作（由多个子智能体同时执行）
-   【核心策略：多子智能体并行，每个子智能体负责一个章节】
-   - 主智能体制定写作大纲（每章的主题、目标、搜索关键词、交叉引用要求）
-   - 每个子智能体获得独立上下文：自己的章节大纲 + 搜索结果 + 模板
-   - 子智能体各自完成：搜索 → 组织 → 写入，互不干扰
-   - 主智能体汇总后更新 wiki/index.md 和 wiki/log.md
-   【优势】：避免单次上下文被撑爆，各章节可以并行推进
-
-4. 内容深度要求（所有子智能体必须遵循）
-   【原则：丰富具体，拒绝浅尝辄止】
-
-   a. 公式讲解规范：
-      - 每个公式必须配有"这个公式在说什么"的自然语言解读
-      - 逐步拆解公式中的每个符号和运算步骤
-      - 提供具体数值示例（而非只给抽象符号）
-      - 说明公式的物理/直觉含义（"为什么是这样"）
-      - 公式前应有铺垫（引入动机），公式后应有验证（举例检验）
-      - ❌ 错误：直接堆叠公式不加解释
-      - ✅ 正确：直觉动机 → 公式 → 逐符号拆解 → 数值示例 → 直觉总结
-
-   b. 内容丰富度要求：
-      - 每个核心概念至少提供 2 种理解角度（直觉/技术/数学/类比）
-      - 重要概念必须包含具体示例（而非只有抽象描述）
-      - 图表/流程用 ASCII 图示或文字描述补充
-      - 前后概念之间要有过渡和衔接，而非孤立罗列
-      - 对比类内容使用表格，推理类内容使用逐步推导
-
-   c. 篇幅控制：
-      - 每篇笔记 3000-5000 字为宜（不含公式和代码）
-      - 超出则拆分为多篇（lesson-name-1, lesson-name-2...）
-      - 代码使用 Obsidian callout 折叠，正文只保留关键片段
-      - 使用"下一步学习"链接串联系列课
-
-5. 内容组织模板
-   - 按由浅入深的逻辑组织：
-     直观理解 → 核心概念（通俗 → 技术）→ 常见误区 → 思考题
-   - 每个"核心概念"包含：通俗解释 → 类比 → 图示描述 → 技术细节
-   - 使用 Obsidian callout 实现交互式折叠
-
-6. 生成思考题
-   - 每个子主题 2-3 道基础题 + 1-2 道进阶题
-   - 使用 `> [!hint]-` 提供思考提示（折叠）
-   - 使用 `> [!success]-` 提供参考答案（折叠）
-   - 支持用户回来对话核对答案
-
-7. 写入 Wiki
-   - 学习笔记 → raw/lessons/（每个主题新建子文件夹）
-   - 发现的重要实体 → wiki/entities/
-   - 发现的核心概念 → wiki/concepts/
-   - 更新 wiki/index.md 和 wiki/log.md
-
-8. 导航一致性检查（系列课程必须执行）
-   - 读取所有文件的 frontmatter，提取 series.part 编号
-   - 按 part 排序，验证文件名与标题的对应关系
-   - 检查每章的"下一步学习"链接是否指向实际的下一章文件（文件名 + 标题）
-   - 检查概览页的路线图和学习路线表是否与实际文件一致
-   - 检查每章的 prerequisites 中引用的前置章节链接是否正确
-   - 如发现不一致，立即修复
-   详细检查清单：[[wiki/concepts/series-navigation-consistency|系列课程导航一致性检查]]
-```
-
-### 5. 研究（Research）——学术论文工作流
-
-> **适用场景**：用户要开始做学术研究、写论文、发表顶会
-> **核心理念**：AI 是加速器，不是替代品——核心创新必须来自人类，选题和方向判断必须由用户主导
-
-#### 研究全流程概览
-
-```
-阶段一：选题（2-4周）
-  → AI辅助：搜索前沿方向、分析可行性、评估创新空间
-  → 用户决策：选择哪个方向（必须用户拍板）
-
-阶段二：文献综述（3-4周）
-  → AI辅助：搜索论文、总结要点、构建知识图谱、发现研究空白
-  → 用户决策：确定具体研究问题
-
-阶段三：方法设计（4-6周）
-  → AI辅助：分析方案优缺点、预测失败原因、辅助代码实现
-  → 用户决策：方法的核心创新点
-
-阶段四：实验验证（6-10周）
-  → AI辅助：设计消融实验、分析结果、生成可视化
-  → 用户决策：实验结论的解读
-
-阶段五：论文写作（4-6周）
-  → AI辅助：生成初稿、优化语言、检查逻辑一致性
-  → 用户决策：论文的核心贡献和叙事框架
-
-阶段六：投稿修改（2-4周+）
-  → AI辅助：回复审稿意见、修改论文
-  → 用户决策：是否接受修改、如何回应
-```
-
-#### 阶段详解
-
-**阶段一：选题**
-
-当用户说"我想研究 XXX 方向"、"帮我找论文选题"时：
-
-```
-1. 前沿扫描（AI执行）
-   - 搜索近1-2年顶会（CVPR/ICCV/NeurIPS/ICML）相关论文
-   - 按热度/新异性排序，识别热门方向
-   - 重点关注论文的"Future Work"章节——这是作者验证过的可行方向
-
-2. 可行性评估（AI执行）
-   - 对每个候选方向评估：
-     * 算力需求（高/中/低）
-     * 数据集获取难度
-     * 代码复杂度
-     * 创新空间（饱和/有缺口）
-   - 结合用户背景（Transformer/CNN/PyTorch基础）给出匹配度评分
-
-3. 用户决策
-   - AI给出3-5个候选方向，每个方向包含：
-     * 具体研究问题
-     * 核心创新点描述
-     * 可行性评估（算力/数据/时间）
-     * 相关参考文献
-   - 用户选择1-2个方向深入调研
-
-4. 输出
-   → 在 research/01-topics/ 创建方向笔记
-   → 在 wiki/concepts/ 补充相关概念页
-```
-
-**阶段二：文献综述**
-
-```
-1. 论文搜索与筛选（AI执行）
-   - 对选定方向，搜索20-30篇相关论文
-   - 使用 Connected Papers / Semantic Scholar 构建论文关系图
-   - 筛选标准：核心论文（前3年引用>100） + 最新论文（近1年）
-
-2. 论文精读笔记（AI辅助）
-   - 每篇论文记录到 research/02-papers/，使用 paper-note 模板：
-     * 核心贡献（一句话）
-     * 方法概述（附关键公式）
-     * 实验设置（数据集/基线/指标）
-     * 优点和局限性
-     * 与自己研究的关联
-
-3. 知识图谱构建（AI辅助）
-   - 定期汇总论文笔记，生成领域图谱
-   - 在 research/02-papers/ 创建 领域名-knowledge-graph.md
-   - 识别：已解决什么问题、未解决什么问题、争议点是什么
-
-4. 研究空白确定（用户+AI）
-   - AI分析："基于以上文献，我认为以下 Gap 尚未被充分研究"
-   - 用户判断：哪个 Gap 最值得切入、为什么
-   - 输出：具体的研究问题 + 假设的创新点
-```
-
-**阶段三：方法设计**
-
-```
-1. 复现基线（AI辅助）
-   - 选择1-2篇最相关的核心论文，复现其代码
-   - 使用 MMDetection / MMSegmentation / OpenMMLab 等开源工具箱
-   - 在复现过程中发现问题：哪些地方可以改进？
-
-2. 提出假设（用户主导）
-   - 基于复现发现的问题，提出改进方向
-   - AI辅助头脑风暴："针对这个问题，有哪些可能的解决思路？"
-   - 用户决策：选择哪个假设深入验证
-
-3. 方法论设计（用户+AI）
-   - 用户主导：核心创新点的设计
-   - AI辅助：
-     * 分析方案优缺点
-     * 预测可能失败的原因
-     * 给出实验设计建议
-     * 辅助关键代码实现
-
-4. 输出
-   → research/03-experiments/ 下的实验日志
-   → research/04-writing/ 下的方法论设计文档
-```
-
-**阶段四：实验验证**
-
-```
-1. 实验设计（用户+AI）
-   - 确定主实验（与SOTA对比）+ 消融实验（每个组件的贡献）
-   - AI辅助设计实验表格和图表
-   - 先用小数据集快速验证，再决定是否大规模训练
-
-2. 实验执行（用户执行）
-   - 使用 Kaggle / Colab / 学校服务器执行
-   - 每次实验记录到 research/03-experiments/YYYY-MM-DD.md
-   - 使用 experiment-log 模板，记录：目的/设置/结果/分析/下一步
-
-3. 结果分析（AI辅助）
-   - AI分析实验结果："这个结果说明了什么？"
-   - 生成可视化图表（matplotlib/seaborn/plotly）
-   - 判断：是否符合预期？是否需要调整？
-
-4. 算力优化策略
-   - 优先使用预训练模型 + 微调
-   - 先在小数据集验证想法
-   - 复用开源代码，避免从零实现
-```
-
-**阶段五：论文写作**
-
-```
-1. 写作规划（用户+AI）
-   - 确定论文的3个核心贡献点
-   - AI辅助规划结构："基于你的贡献，这个论文应该怎么组织？"
-   - 用户决策：每章要讲什么故事
-
-2. 分节写作（AI辅助，用户主导方向）
-   - 模板顺序：Abstract → Introduction → Related Work → Method → Experiment → Conclusion
-   - AI辅助：
-     * 生成初稿（用户给框架，AI扩写）
-     * 优化语言（检查学术表达准确性）
-     * 检查逻辑一致性（前后是否自洽）
-     * 翻译辅助（中→英或英→中）
-
-3. 学术语言规范（AI必须严格遵守）
-   - 避免口语化："This is good" → "This approach demonstrates superior performance"
-   - 避免绝对化："we solve the problem" → "we propose a method that alleviates..."
-   - 使用顶会常用表达：
-     * 贡献："we introduce / propose / present / develop"
-     * 对比："outperforms / surpasses / exceeds / achieves state-of-the-art"
-     * 局限："while effective, our method has limitations in..."
-
-4. 图表制作（AI辅助）
-   - AI辅助设计图表布局和配色
-   - 建议图表类型：方法框架图、实验对比表、消融分析图
-   - 图表要有自明性：只看图表能理解核心信息
-
-5. 输出
-   → research/04-writing/paper-draft-v1.md, v2.md, v3.md...
-   → 最终版本 → Overleaf 进行 LaTeX 排版
-```
-
-**阶段六：投稿与修改**
-
-```
-1. 投稿准备
-   - 选择目标会议（参考 CCF 列表 + 你的方向匹配度）
-   - 检查格式要求（页数、模板、引用风格）
-   - 查重（iThenticate / Turnitin）
-   - 生成 PDF，检查图表清晰度
-
-2. 审稿意见回复（AI辅助）
-   - 整理每条审稿意见
-   - AI辅助生成回复模板："感谢审稿人的建议，我们做了以下修改..."
-   - 用户决策：是否接受修改、如何在论文中体现
-
-3. 迭代投稿
-   - 如果被拒，分析审稿意见，修改论文
-   - 投下一个会议（会议周期：CVPR 3月截稿/11月出结果）
-   - 或转为投 Journal（周期更长但相对宽松）
-```
-
-#### 顶会论文 AI 辅助提示词模板
+**在 D:\note 的应用**：
+- 论文笔记的"关键公式"段自动转为复习卡
+- 面试准备（八股文）的高效复习
+- 长期记忆（避免"读了忘"）
+
+---
+
+## 3. 笔记质量 10 条标准（强制）
+
+> 详细定义见 [[research/08-strategy/note-quality-standards]]。本节为速查版。
+
+| # | 维度 | 评分点 | 自检命令 |
+|---|---|---|---|
+| 1 | **结构化与导航** | TOC + H2/H3 + 公式编号 + References + updated | 见 §4 流程 |
+| 2 | **可视化强制** | ≥1 自绘图 + ≥1 对照表 + 关键论点配图 + 配色统一 | Excalidraw / mermaid |
+| 3 | **公式三件套** | 直觉动机 + 公式 + 符号拆解 + 数值示例 + 直觉总结 | 五件套检查 |
+| 4 | **引用密度** | <1000 字≥5 / 1000-3000 字≥10 / 3000-5000 字≥20 / ≥5000 字≥30 | 全部可点击 |
+| 5 | **强观点 + 完整句子** | 陈述句 ≥70% + 每节首句断言 + 无对冲词 | 文本风格扫描 |
+| 6 | **密集互联** | inlinks ≥3 + outlinks ≥3 + 显式双向链接 | Dataview 检测孤立页 |
+| 7 | **Case Studies 回扣** | ≥2 Case + 背景/应用/结果/启示 + 显式回扣正文 | 段落结构检查 |
+| 8 | **Last updated 时间戳** | frontmatter.updated = 今日 + 大改有更新日志 | Templater 自动 |
+| 9 | **可验证性** | 每条论断有源 + 无"业内人士说" + 数据有复现链接 | 引用源审计 |
+| 10 | **可复用性** | 文件名稳定 + 不掺杂项目进度 + frontmatter ≥5 字段 | Atomic Note 原则 |
+
+### 评分卡模板（生成后必须填写）
 
 ```markdown
-【选题阶段 - 搜索前沿】
-"我是一名计算机科学大二学生，有 Transformer/CNN/PyTorch 基础，
-想研究 [方向]。请帮我：
-1. 搜索近2年顶会（CVPR/ICCV/NeurIPS）中该方向的最新论文
-2. 识别3个最适合本科生、有限算力下可完成的选题
-3. 每个选题给出：研究问题、创新点、可行性评估（算力/数据）
-4. 给出每个选题的3篇核心参考文献"
+## 质量自评
 
-【文献综述 - 总结论文】
-"我正在阅读论文：[论文标题]
-请帮我：
-1. 用3句话概括核心贡献
-2. 提取方法的关键步骤（如果有公式，给出逐步解释）
-3. 分析实验设计：用什么数据集/基线/指标？
-4. 指出该工作的1-2个局限性
-5. 如果我要基于这篇论文改进，有什么可能的切入点？"
+| # | 维度 | 评分（0/1） | 证据 |
+|---|---|---|---|
+| 1 | 结构化与导航 |  |  |
+| ... | ... |  |  |
+| 10 | 可复用性 |  |  |
+| **总分** |  | **/10** |  |
 
-【方法设计 - 头脑风暴】
-"我的研究问题是：[问题]
-我想提出一种改进方法：[初步想法]
-请帮我：
-1. 分析这种方法的潜在优点
-2. 分析可能的失败原因
-3. 给出3种不同的实现思路
-4. 预测每种思路的实验结果（好/中/差）
-
-注意：请基于你对该领域的理解给出诚实评估，不要为了讨好我而只说优点"
-
-【论文写作 - 引言】
-"我正在写一篇关于 [主题] 的论文。我的听众是 [会议] 审稿人。
-核心贡献是：
-1. [贡献1]
-2. [贡献2]
-3. [贡献3]
-请帮我写一个引言，包含：
-1. 一个吸引人的开场（为什么这个问题重要？）
-2. 当前方法的不足（现有工作的 Gap）
-3. 我的方法的核心思想
-4. 论文结构预览
-
-请使用学术论文的规范表达，避免口语化。"
-
-【论文写作 - 方法描述】
-"我的方法叫做 [X]，核心思想是 [Y]。
-请帮我用以下结构描述：
-1. 问题定义（用数学符号精确描述）
-2. 整体框架（我会提供一个草图，请描述图中应该包含的元素）
-3. 关键组件A/B/C的详细说明（每个包含：动机/方法/公式）
-4. 与现有方法的关键区别
-
-请用精确的学术语言，不要模糊表达。"
+**评级**：○ 顶会水准 (9-10) · ○ 付费资料水准 (7-8) · ○ 普通博客水准 (5-6) · ○ 教科书水准 (3-4) · ○ 不合格 (0-2)
 ```
-
-#### 免费资源清单（有限预算）
-
-```
-GPU 资源（按推荐度排序）：
-- Kaggle：T4/P100 16GB，每周30小时免费额度【首选】
-- Google Colab：T4 15GB，免费但不稳定【备用】
-- 阿里云 PAI：V100 16GB，每日免费领取【补充】
-- 百度 AI Studio：V100，一定额度【补充】
-
-数据集：
-- COCO Dataset：目标检测/分割
-- ADE20K：语义分割
-- UCF101 / Kinetics：动作识别
-- MVTec：异常检测
-
-开源工具箱（站在巨人肩上）：
-- OpenMMLab（MMDetection/MMSegmentation等）
-- Detectron2（Facebook）
-- PaddlePaddle（PaddleSeg）
-- Hugging Face Transformers
-
-论文与代码：
-- arXiv：最新论文
-- Papers with Code：SOTA 汇总
-- Semantic Scholar：论文关系图
-- Connected Papers：相关论文发现
-```
-
-#### 学习笔记模板
-
-使用 `_templates/lesson.md` 模板，包含以下核心 section：
-
-```markdown
-# 学习主题
-> 一句话描述你将学到什么
-
-## 学习目标        ← 完成后能做什么（可勾选 checklist）
-## 前置知识        ← 需要先会什么（表格 + Wiki 链接）
-## 直观理解        ← 生活中的类比，建立直觉
-## 核心概念        ← 逐个拆解（通俗 → 类比 → 图示 → 技术细节）
-## 整体流程/架构图  ← 展示概念间的关系
-## 常见误区        ← 误解 vs 正确理解（表格）
-## 思考题          ← 交互式问答（Obsidian callout 折叠）
-## 关键要点回顾     ← 3-5 个核心 take-away
-## 扩展阅读        ← 论文/博客/视频推荐
-## 下一步学习      ← 系列课链接或建议方向
-```
-
-#### 论文翻译笔记规范
-
-当用户要求翻译一篇论文并整理学习笔记时：
-
-**文件夹结构**：每篇论文必须在 `raw/lessons/` 下新建一个独立子文件夹。如果多篇论文属于同一个阅读系列，可以在系列文件夹下再按论文分子文件夹。例如：
-
-```
-raw/lessons/Multi-Agent-Survey/           ← 系列文件夹
-├── 01-progress-and-challenges/            ← 第 1 篇论文的独立子文件夹
-│   ├── 00-overview.md
-│   ├── 01-introduction.md
-│   └── ...
-└── 02-recent-advances/                    ← 第 2 篇论文的独立子文件夹
-    ├── 10-overview.md
-    ├── 10-introduction.md
-    └── ...
-```
-
-**内容质量要求**：
-- 每篇笔记必须内容充实（3000-5000 字正文），宁可笔记数量少，也不能每篇太单薄
-- 如果拆篇后单篇内容过少，应该合并：优先保证每篇信息密度足够高
-- 目标是"少而精"而非"多而浅"
-
-**精华/essence 汇总要求**：
-- 每篇论文必须额外包含一篇专门用于总结记录该论文精华的笔记，放在该论文子文件夹的开头
-- 该精华笔记文件名固定为 `00-essence.md`，用于提炼论文的核心贡献、关键机制、重要结论与创新点
-- essence 笔记应与分篇翻译笔记互补：分篇笔记负责按原文结构细致翻译，essence 笔记负责结构化提炼整篇论文
-- 在 `wiki/index.md` 的系列入口中，essence 笔记应作为该论文学习路线的第一篇导航页
-
-**论文关键信息提炼要求**：
-- 以下信息至少应在 `00-essence.md` 中集中呈现，必要时可在 `00-overview.md` 或对应分篇笔记中展开
-- 必须明确标注论文发表的会议或期刊名称；若为 arXiv 预印本，也要注明其当前状态（如 arXiv / 未正式发表）
-- 必须明确标注论文的发表时间；至少精确到年份，如能确认则优先记录到年月
-- 必须清楚说明论文要解决的核心问题是什么，最好用 1-3 句话概括问题背景、痛点与研究动机
-- 必须说明论文为了解决该问题所采用的研究方法是什么，以及实验所使用的数据集或数据来源是什么
-- 必须总结论文的最终效果如何，包括主要实验结果、相对基线/现有方法的表现，以及作者声称的核心收益
-- 必须指出论文的不足、局限性与可改进之处；如原文未明确说明，可结合方法设计与实验结果给出审慎分析，并与原文内容明确区分
-
-**翻译精度要求**：
-- 必须基于原论文精准翻译，不得大幅意译或改写
-- 原文翻译和非原文补充必须严格区分：
-  - **原文翻译**：直接放在 `## 正文翻译` 下的各级标题中，不加任何额外 callout
-  - **译者注（非原文）**：使用 `> [!note] 译者注（非原文）` callout
-  - **理解提示（非原文）**：使用 `> [!tip] 理解提示（非原文）` callout
-  - **易混点（非原文）**：使用 `> [!warning] 易混点（非原文）` callout
-- 非原文补充应精简，不得喧宾夺主；核心内容必须来自原论文
-- 原论文中的表格、公式、图表描述必须完整保留
-
-### 5.1 科研日志（Journal）
-
-当用户要求记录科研活动、生成日志、或每周结束时：
-
-```
-1. 每日日志（daily）
-   - 触发：用户说"记录今天科研"、"今天做了什么"
-   - 读取 research/07-journal/daily/ 下的当日文件
-   - 使用 daily-research-log 模板
-   - 强制包含三维度：做了什么、为什么、有什么用
-   - 包含论文材料记录：关键数据、创新点、突破
-
-2. 每周总结（weekly）
-   - 触发：用户说"写周报"、"总结本周"
-   - 汇总本周所有 daily 日志
-   - 使用 weekly-research-summary 模板
-   - 强制包含：论文材料周汇总（关键数据/创新/突破）
-
-3. 错误记录
-   - 触发：用户说"记录错误"、"踩坑了"
-   - 追加到 research/07-journal/_error-log.md
-   - 按 ERR/DIR/TOOL/SOFT 分类编号
-```
-
-### 5.2 工具集成（Tools）
-
-当用户要求使用科研工具或查询工具策略时：
-
-```
-1. 工具策略查询
-   - 读取 research/06-tools/tool-strategy.md
-   - 根据当前研究阶段推荐工具组合
-
-2. Zotero 联动
-   - 读取 research/06-tools/zotero-obsidian-workflow.md
-   - 从 Zotero .bib 文件同步元数据到 Obsidian 笔记
-
-3. Claude Code 自动化
-   - 读取 research/06-tools/codex-research-workflow.md
-   - 执行自动化任务（读论文/写代码/写论文/润色）
-```
-
-### 5.3 期刊查询（Journal Query）
-
-当用户要求查询可投期刊、截稿时间等信息时：
-
-```
-1. 读取 research/05-submission/_journals/journal-registry.md
-2. 根据用户的研究方向和论文质量推荐目标期刊
-3. 如果期刊详情页不存在，自动搜索并创建
-4. 使用 journal-info 模板
-```
-
-### 5.4 完整研究流程（Pipeline）
-
-当用户启动新的研究项目时，执行 research/09-workflow/research-pipeline.md 中定义的完整流程。
-每个阶段完成后，检查对应的 phase-checklists 清单。
-
-**用户说"我想研究 XXX"时的完整流程：**
-
-```
-Phase 0: 方向萌芽 → 搜索前沿、初步评估 → 用户选方向
-Phase 1: 第一轮精读 → 20-30篇论文 → 两轮调研分析
-Phase 2: 方向确定 → Gap Analysis → 给出3个具体研究问题 → 用户选择
-Phase 3: 第二轮精读 → 深度搜索30-50篇 → 复现基线 → 改进想法
-Phase 4: 项目规划 → 实验方案 → 数据集/基线/指标确定
-Phase 5: 实验执行 → 每日日志 + 每周总结 → 持续记录论文材料
-Phase 6: 论文写作 → 分章节写作 → 润色 → 格式排版
-Phase 7: 投稿 → 选择期刊 → 提交 → 审稿 → 修改 → 重投
-```
-
-**两类记录要求：**
-- 日志记录：做了什么、为什么做、有什么用（每日 + 每周）
-- 论文材料记录：关键数据、关键创新、关键突破（随时记录，可凝练为论文内容）
-
-## 链接与交叉引用
-
-- 使用 Obsidian `[[wikilink]]` 语法链接页面
-- 使用相对路径：`[[wiki/concepts/knowledge-compilation]]`
-- 相关页面部分必须列出所有关联页面
-- 新建页面时必须检查是否有现有页面应与之链接
-
-## 日志格式
-
-在 `wiki/log.md` 中追加记录时，使用以下格式：
-
-```markdown
-## [YYYY-MM-DD] 操作类型 | 简要描述
-
-- 处理了 XXX
-- 创建了 [[wiki/summaries/xxx]]
-- 更新了 [[wiki/concepts/xxx]]
-```
-
-操作类型：`ingest` | `query` | `lint` | `learn` | `research` | `create` | `update`
-
-## 命名约定
-
-- **文件名**：使用英文，保持简洁描述性，如 `knowledge-compilation.md`、`Andrej Karpathy.md`
-- **标签**：使用中文或英文，`#标签名`，避免嵌套过深
-- **文件夹**：已定义的 wiki 子目录不接受新子目录，除非用户明确要求。**`raw/lessons/` 例外**——每个学习主题新建一个以主题命名的子文件夹（如 `raw/lessons/Transformer/`），相关笔记全部放入其中，便于按模块组织
-
-### 科研目录命名规则
-
-- 科研日志：`daily/YYYY-MM-DD.md`、`weekly/WNN-YYYY.md`
-- 论文队列：`_reading-queue/YYYY-MM-DD.md`
-- 期刊信息：`_journals/[journal-name].md`
-- 审稿记录：`_reviews/YYYY-MM-DD-venue.md`
-- 工具指南：`06-tools/[tool-name].md`
-- 策略文档：`08-strategy/[descriptive-name].md`
-- 阶段检查清单：`09-workflow/phase-checklists/NN-[phase].md`
-
-## 注意事项
-
-- 用户已有的 `idea/` 和 `news/` 文件夹是自由区域，不要主动修改
-- 只有 `wiki/` 目录下的内容由 LLM 维护
-- `raw/` 中的文件绝对不可修改（**`raw/lessons/` 例外**——这是学习笔记的存放位置，可自由编辑）
-- 每次操作后都要更新 `wiki/index.md` 和 `wiki/log.md`
-- 如果用户只问简单问题（不需要 Wiki），正常回答即可，不必强制走 Wiki 流程
-
-## 笔记质量强制自检（v1.0，2026-07-05 立）
-
-> **本节为本仓强制规则，所有 LLM 生成的笔记必须遵守。**
-
-任何由 LLM 生成的研究笔记、论文笔记、调研笔记、Wiki 页面在**落盘后**必须**立即**执行：
-
-1. **跑 10 条标准自检** — 调用 `quality-control-checker` skill，按 10 条可验证标准逐条打分（详见 `D:\note\research\08-strategy\note-quality-standards.md`）。
-2. **填写 10 分制评分卡** — 每条 0/1 分，附证据（具体行号/段落）。
-3. **总分判定**：
-   - **≥ 7 分**：在笔记末尾追加 `## 质量自评` 段，包含评分表 + 评级；正常 commit + push。
-   - **< 7 分**：必须自主修改后重新自评；连续 3 次 < 7 触发 `/skill-evolve`。
-   - **< 5 分**：直接重写，从大纲阶段开始重做。
-
-### 适用范围
-
-- ✅ `/paper-note` 生成的论文精读笔记（全检）
-- ✅ `/note-research` 生成的调研笔记（重点检 #4 #5 #9）
-- ✅ `daily-paper-generator` Top 1 论文（全检）/ Top 3（部分检）/ Top 10（仅检可验证性）
-- ✅ `obsidian-project-kb-core` Wiki 维护时新建/更新的概念页
-- ❌ 简单问答、`idea/`、`news/`、`raw/`（除 lessons）不强制
-
-### 与现有 skill 的衔接
-
-- `paper-note` / `note-research` / `daily-paper-generator` 三个 skill 已在末尾强制嵌入评分卡。
-- `quality-control-checker` skill 封装 10 条自检命令 + 评分卡模板。
 
 ### 评级对标
 
 | 总分 | 评级 | 对标 |
 |---|---|---|
 | 9-10 | 顶会水准 | Lilian Weng / Distill.pub / 顶会论文 |
-| 7-8 | 付费资料水准 | 知名研究员博客 / 顶级技术书 |
+| 7-8 | **付费资料水准（合格线）** | 知名研究员博客 / 顶级技术书 |
 | 5-6 | 普通博客水准 | Medium 优秀技术博客 |
 | < 5 | 不合格 | 必须重写 |
 
-### 相关文档
+---
 
-- 标准 + 评分卡：`research/08-strategy/note-quality-standards.md`
-- 调研汇总 + 路线图：`research/08-strategy/note-quality-research.md`
-- Obsidian 工具链：`research/06-tools/obsidian-advanced-toolkit.md`
+## 4. 自检流程（强制环节）
 
-## Git 同步规则
+> **本节为本仓强制规则，所有 LLM 生成的笔记必须遵守。**
+
+### 4.1 触发时机
+
+任何 LLM 生成的研究笔记、论文笔记、调研笔记、Wiki 页面在**落盘后**立即执行。
+
+### 4.2 流程
+
+```
+1. LLM 完成笔记生成
+2. LLM 强制执行 10 条自检命令（§3 表格末列）
+3. LLM 填写评分卡（§3 模板），得出总分
+4. 若总分 < 7：
+   - LLM 自主修改 → 重跑自检 → 提交
+   - 连续 3 次 < 7 触发 /skill-evolve
+5. 若总分 ≥ 7：
+   - 在笔记末尾追加 `## 质量自评` 段
+   - commit + push（按 §9 Git 规则）
+6. 若总分 < 5：
+   - 直接重写，从大纲阶段开始
+```
+
+### 4.3 适用 vs 不适用
+
+| 适用 | 不适用 |
+|---|---|
+| ✅ paper-note 论文笔记（全检） | ❌ 简单问答 |
+| ✅ note-research 调研笔记（重点 #4 #5 #9） | ❌ idea/ 内容（用户自由区域） |
+| ✅ daily-paper Top 1 论文（全检） | ❌ raw/ 内容（除 lessons/） |
+| ✅ wiki/ 维护时新建/更新 | ❌ news/（用户自由区域） |
+
+### 4.4 调用方式
+
+使用 `~/.claude/skills/quality-control-checker/SKILL.md` 描述的 10 条自检命令 + 评分卡模板。
+
+或参考 [[research/08-strategy/note-quality-standards]] 末尾"生成后自检流程"段。
+
+---
+
+## 5. Skill 生态（v2.0 已部署）
+
+> 用户级 Skill（`C:\Users\oobbee\.claude\skills\`）+ 项目级 Skill（`D:\note\.claude\skills\`）
+
+### 5.1 用户级 Skill（核心 4 个）
+
+| Skill | 触发词 | 用途 |
+|---|---|---|
+| **obsidian-project-kb-core** | "知识库"/"KB" | KB 路由入口 |
+| **quality-control-checker** | "笔记自检"/"质量评分" | 10 条标准强制自评 |
+| **paper-note** | "/paper-note" | 单篇论文精读（v2.0 末尾嵌入评分卡） |
+| **note-research** | "/note-research" | 方向调研学习笔记（v2.0 末尾嵌入评分卡） |
+| **daily-paper-generator** | "/daily" | 每日论文摘要（v2.0 Top 1 全检） |
+
+### 5.2 项目级 Skill（v2.0 新增 8 个，部署在 D:\note\.claude\skills\）
+
+| Skill | 触发词 | 来源 |
+|---|---|---|
+| **literature-review** | "文献综述" / "PRISMA" | K-Dense-AI/claude-scientific-writer |
+| **citation-management** | "引用管理" / "BibTeX" | K-Dense-AI |
+| **peer-review** | "审稿" / "评审" | K-Dense-AI |
+| **venue-templates** | "会议模板" / "投稿格式" | K-Dense-AI |
+| **idea-discovery** | "idea 发现" / "研究方向" | ARIS |
+| **citation-audit** | "引用审计" / "查伪造" | ARIS |
+| **experiment-plan** | "实验规划" | ARIS |
+| **ablation-planner** | "消融设计" | ARIS |
+
+每个 Skill 的 SKILL.md 都在对应目录，含触发条件 + 操作流程 + D:\note 适配段。
+
+### 5.3 调用决策表
+
+| 用户说 | 触发 Skill |
+|---|---|
+| "把 X 论文转成笔记" | paper-note |
+| "调研 X 方向" | note-research |
+| "今天有什么新论文" | daily-paper-generator |
+| "审稿" / "评审这篇文章" | peer-review |
+| "系统综述" / "文献综述" | literature-review |
+| "引用规范" / "BibTeX" | citation-management |
+| "找个 idea" | idea-discovery |
+| "引用靠不靠谱" | citation-audit |
+| "设计实验" | experiment-plan |
+| "消融方案" | ablation-planner |
+| "投哪个会议" | venue-templates |
+| "笔记自检" | quality-control-checker |
+| "把笔记入库" | obsidian-source-ingestion / obsidian-project-kb-core |
+
+---
+
+## 6. 操作流程（v2.0 精简版）
+
+### 6.1 生成新笔记
+
+```
+1. 明确目的（学什么 / 写什么 / 给谁看）
+2. 选 skill：paper-note / note-research / 自写
+3. 收集素材：论文 / 文档 / 网页（用 defuddle 抓）
+4. 写笔记：
+   - 元信息（frontmatter，type / tags / created / updated / sources）
+   - TOC（如适用）
+   - 主体内容（按对应模板）
+   - References / 引用源
+5. 跑 quality-control-checker（§4）
+6. 总分 ≥ 7：在笔记末尾追加 ## 质量自评
+7. commit + push（§9）
+```
+
+### 6.2 维护 Wiki
+
+```
+1. 用 Dataview 检测孤立页（§3.6）
+2. 用 kb-lint 检查链接 / frontmatter
+3. 用 Excalidraw 重画老旧示意图
+4. 用 Templater 自动更新 updated 字段
+5. 每月底跑一次 KB 健康检查
+```
+
+### 6.3 学习新主题
+
+```
+1. 拆解主题为子主题
+2. 用 literature-review 找权威论文
+3. 用 paper-note 精读 3-5 篇代表作
+4. 用 note-research 调研实战应用
+5. 用 Excalidraw 画概念关系图
+6. 写 Wiki 概念页（v2.0 满足 10 条标准）
+7. 用 Spaced Repetition 复习关键概念
+```
+
+### 6.4 科研全流程
+
+```
+1. idea-discovery 找方向
+2. literature-review 做综述
+3. paper-note 精读核心论文
+4. note-research 调研前沿
+5. experiment-plan 设计实验
+6. ablation-planner 设计消融
+7. peer-review 自审
+8. ml-paper-writing / venue-templates 写论文
+9. review-response 审稿回复
+```
+
+---
+
+## 7. 命名与日志（v2.0）
+
+### 7.1 文件命名
+
+- **英文 / 描述性**：例如 `gated-attention.md`、`attention-sink.md`
+- **避免日期前缀**：避免 `2026-07-05-transformer.md`（破坏 wikilink 稳定性）
+- **唯一例外**：`raw/lessons/<topic>/00-paper-note-<name>.md`（论文笔记）
+
+### 7.2 Frontmatter 必填字段
+
+```yaml
+---
+type: concept | entity | summary | comparison | overview | paper-note | research-note
+tags: [至少 1 个标签]
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+sources: [可选，原始资料路径]
+---
+```
+
+### 7.3 日志格式（wiki/log.md / research/08-strategy/）
+
+```markdown
+## [YYYY-MM-DD] 操作类型 | 简要描述
+
+- 处理了 XXX
+- 创建了 [[path/to/note]]
+- 更新了 [[path/to/note]]
+```
+
+操作类型：`ingest` | `query` | `lint` | `learn` | `research` | `create` | `update` | `cleanup` | `upgrade`
+
+### 7.4 Tags 约定（Title Case）
+
+- 主题：`#Transformer`、`#LLM`、`#Attention`
+- 类型：`#concept`、`#entity`、`#paper-note`
+- 状态：`#in-progress`、`#completed`、`#archived`
+- 标准缩写首字母大写：`#TDD`、`#RLHF`、`#NeurIPS`、`#ICML`
+
+---
+
+## 8. 注意事项（v2.0）
+
+- **`raw/` 不可修改**——除 `raw/lessons/` 例外
+- **wiki/ 只放 LLM 维护的笔记**——用户的想法进 `idea/`
+- **`idea/` 和 `news/` 是用户自由区域**——LLM 不主动修改（v2.0 已清空骨架）
+- **每篇笔记末尾必须附 `## 质量自评`**——总分 < 7 必须重写
+- **commit message 用中文简洁描述**——按 §9 Git 规则自动 push
+- **月度 KB 健康检查**——用 `kb-lint` 自动检测孤立页 / 链接断裂
+- **不要轻易改本文件**——v2.0 是稳定版，下次升级需先评估迁移成本
+
+---
+
+## 9. Git 同步规则（v2.0）
 
 本仓库已关联到 GitHub：`https://github.com/yangchunwanwusheng/obsidian`
 
@@ -761,7 +435,63 @@ git push
 ```
 
 **规则：**
+
 - 每次对话结束时，检查 `git status`，如果有未推送的改动就必须 commit + push
 - commit message 使用中文简洁描述本次改动内容
 - 不要等待用户提醒，这是自动执行的规则
 - 如果 push 失败（如网络问题），提醒用户手动处理
+
+### 9.1 Commit 模板
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**type**：`feat` | `fix` | `chore` | `docs` | `refactor` | `test`
+**scope**：`wiki` | `research` | `lessons` | `claude` | `vault`
+**subject**：中文，简洁（≤30 字）
+
+### 9.2 推荐原子化提交
+
+- ✅ 一次 commit 一个逻辑单元（如"立笔记质量标准"+"升级 skill"+"实战样例"）
+- ❌ 一次 commit 混多个不相关改动（如"删 100 个文件"+"改 CLAUDE.md"）
+
+---
+
+## 10. 快速参考
+
+### 10.1 核心文档
+
+- [[research/08-strategy/note-quality-standards|笔记质量 10 条标准]]
+- [[research/08-strategy/note-quality-research|笔记质量升级 · 调研汇总]]
+- [[research/06-tools/obsidian-advanced-toolkit|Obsidian 高级工具链]]
+- [[raw/lessons/Gated-Attention/00-paper-note-gated-attention|实战样例（10/10 顶会水准）]]
+
+### 10.2 Skill 速查
+
+- 用户级 5 个：`obsidian-project-kb-core` / `quality-control-checker` / `paper-note` / `note-research` / `daily-paper-generator`
+- 项目级 8 个：`literature-review` / `citation-management` / `peer-review` / `venue-templates` / `idea-discovery` / `citation-audit` / `experiment-plan` / `ablation-planner`
+
+### 10.3 插件速查
+
+- **必装**：Dataview / Templater / Excalidraw
+- **强力推荐**：Smart Connections / Periodic Notes + Calendar / Spaced Repetition
+
+### 10.4 自我升级路径
+
+- 笔记质量不达标？→ 读 [[research/08-strategy/note-quality-standards]]
+- 工具用法不会？→ 读 [[research/06-tools/obsidian-advanced-toolkit]]
+- Skill 不会用？→ 读 `D:\note\.claude\skills\<skill-name>\SKILL.md`
+- 流程不清楚？→ 读本文件 §6
+
+---
+
+> **作者声明**：本文件是 v2.0 全面升级版，整合了 6 个 P0 插件栈 + 10 条质量标准 + 8 个研究 Skill。流程化能力 = 强制自检 + 插件自动化 + Skill 复用。下次升级需先评估迁移成本（建议 v3.0 在 6 个月后或累计 50 篇合格笔记后启动）。
+>
+> **升级时间**：2026-07-05
+> **升级 Agent**：Claudian（v2.0）
+> **升级触发**：用户授权"清除旧内容 + 注入插件/笔记方法"

@@ -8,7 +8,7 @@
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
   "excludedTags": [
-    "privete"
+    "private"
   ],
   "mediaFolder": "",
   "systemPrompt": "",

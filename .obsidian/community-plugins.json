@@ -3,5 +3,9 @@
   "obsidian-git",
   "dataview",
   "templater-obsidian",
-  "language-translator"
+  "language-translator",
+  "obsidian-excalidraw-plugin",
+  "smart-connections",
+  "periodic-notes",
+  "obsidian-spaced-repetition"
 ]

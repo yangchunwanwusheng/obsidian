@@ -20,3 +20,9 @@ desktop.ini
 # === Claude Code session cache ===
 .claude/cache/
 .claude/transcripts/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
