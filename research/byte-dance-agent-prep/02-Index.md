@@ -18,7 +18,7 @@ TABLE
   topic as "主题",
   file.mtime as "更新时间",
   rating as "自评分"
-FROM "Research/byte-dance-agent-prep/Knowledge"
+FROM "research/byte-dance-agent-prep/Knowledge"
 WHERE type = "lesson"
 SORT file.mtime DESC
 ```
@@ -30,7 +30,7 @@ TABLE WITHOUT ID
   topic as "主题",
   length(rows) as "笔记数",
   length(filter(rows, (r) => r.rating = "10/10")) as "10/10 篇数"
-FROM "Research/byte-dance-agent-prep/Knowledge"
+FROM "research/byte-dance-agent-prep/Knowledge"
 WHERE type = "lesson"
 GROUP BY topic
 SORT length(rows) DESC
@@ -43,7 +43,7 @@ TABLE WITHOUT ID
   week as "周次",
   length(rows) as "已完成笔记",
   length(filter(rows, (r) => r.rating = "10/10")) as "满分笔记"
-FROM "Research/byte-dance-agent-prep/Knowledge"
+FROM "research/byte-dance-agent-prep/Knowledge"
 WHERE type = "lesson"
 GROUP BY week
 SORT week ASC
@@ -53,7 +53,7 @@ SORT week ASC
 
 ```dataview
 LIST
-FROM "Research/byte-dance-agent-prep/Knowledge"
+FROM "research/byte-dance-agent-prep/Knowledge"
 WHERE type = "lesson" AND rating = "10/10"
 SORT file.mtime DESC
 ```

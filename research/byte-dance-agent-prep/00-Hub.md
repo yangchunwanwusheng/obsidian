@@ -51,20 +51,29 @@ tags: [hub, project, byte-dance, agent, 2026-summer]
 
 按主题组织的笔记：
 
-- **[[Knowledge/01-python-advanced|01 Python 进阶]]**（Week 1）
-- **[[Knowledge/02-llm-fundamentals|02 LLM 基础]]**（Week 1）
-- **[[Knowledge/03-prompt-engineering|03 Prompt Engineering]]**（Week 2）
-- **[[Knowledge/04-function-calling|04 Function Calling]]**（Week 2）
-- **[[Knowledge/05-rag-system|05 RAG 系统]]**（Week 3）
-- **[[Knowledge/06-agent-frameworks|06 Agent 框架]]**（Week 4）
-- **[[Knowledge/07-multi-agent|07 Multi-Agent 协作]]**（Week 5）
-- **[[Knowledge/08-memory-system|08 Memory 系统]]**（Week 5）
-- **[[Knowledge/09-agent-evaluation|09 Agent 评估]]**（Week 6）
-- **[[Knowledge/10-observability|10 可观测性]]**（Week 6）
-- **[[Knowledge/11-system-design|11 系统设计]]**（Week 7）
-- **[[Knowledge/12-deployment|12 部署与运维]]**（Week 7）
-- **[[Knowledge/13-interview-bank|13 字节面试题库]]**（Week 8）
-- **[[Knowledge/14-resume-projects|14 简历项目模板]]**（Week 8）
+- **[[Knowledge/01-python-advanced|01 Python 进阶]]**（Week 1）✅
+- **[[Knowledge/02-transformer-architecture|02 Transformer 架构]]**（Week 1）✅
+- **[[Knowledge/03-llm-training-inference|03 LLM 训练与推理]]**（Week 1）✅
+- **[[Knowledge/04-prompt-engineering|04 Prompt Engineering]]**（Week 2）🔲
+- **[[Knowledge/05-function-calling|05 Function Calling]]**（Week 2）🔲
+- **[[Knowledge/06-structured-output|06 结构化输出]]**（Week 2）🔲
+- **[[Knowledge/07-rag-embedding|07 Embedding + 向量库]]**（Week 3）🔲
+- **[[Knowledge/08-rag-retrieval|08 检索策略]]**（Week 3）🔲
+- **[[Knowledge/09-rag-system|09 RAG 系统设计]]**（Week 3）🔲
+- **[[Knowledge/10-agent-principles|10 Agent 原理]]**（Week 4）🔲
+- **[[Knowledge/11-langgraph|11 LangGraph 深入]]**（Week 4）🔲
+- **[[Knowledge/12-tool-design|12 Tool Use 设计模式]]**（Week 4）🔲
+- **[[Knowledge/13-multi-agent|13 Multi-Agent 框架]]**（Week 5）🔲
+- **[[Knowledge/14-memory-system|14 Memory 系统]]**（Week 5）🔲
+- **[[Knowledge/15-function-calling-advanced|15 Function Calling 高级]]**（Week 6）🔲
+- **[[Knowledge/16-agent-evaluation|16 Agent 评估体系]]**（Week 6）🔲
+- **[[Knowledge/17-observability|17 可观测性]]**（Week 6）🔲
+- **[[Knowledge/18-system-design|18 系统设计]]**（Week 7）🔲
+- **[[Knowledge/19-deployment|19 部署]]**（Week 7）🔲
+- **[[Knowledge/20-performance|20 性能优化]]**（Week 7）🔲
+- **[[Knowledge/21-interview-coding|21 字节真题]]**（Week 8）🔲
+- **[[Knowledge/22-interview-system-design|22 系统设计 30 题]]**（Week 8）🔲
+- **[[Knowledge/23-resume|23 简历项目]]**（Week 8）🔲
 
 ---
 
@@ -96,7 +105,7 @@ TABLE WITHOUT ID
   length(filter(rows, (r) => r.week = "W2")) as "Week 2 笔记",
   length(filter(rows, (r) => r.week = "W3")) as "Week 3 笔记",
   length(filter(rows, (r) => r.week = "W4")) as "Week 4 笔记"
-FROM "Research/byte-dance-agent-prep/Knowledge"
+FROM "research/byte-dance-agent-prep/Knowledge"
 WHERE type = "lesson"
 GROUP BY "进度统计"
 ```
