@@ -707,6 +707,47 @@ Phase 7: 投稿 → 选择期刊 → 提交 → 审稿 → 修改 → 重投
 - 每次操作后都要更新 `wiki/index.md` 和 `wiki/log.md`
 - 如果用户只问简单问题（不需要 Wiki），正常回答即可，不必强制走 Wiki 流程
 
+## 笔记质量强制自检（v1.0，2026-07-05 立）
+
+> **本节为本仓强制规则，所有 LLM 生成的笔记必须遵守。**
+
+任何由 LLM 生成的研究笔记、论文笔记、调研笔记、Wiki 页面在**落盘后**必须**立即**执行：
+
+1. **跑 10 条标准自检** — 调用 `quality-control-checker` skill，按 10 条可验证标准逐条打分（详见 `D:\note\research\08-strategy\note-quality-standards.md`）。
+2. **填写 10 分制评分卡** — 每条 0/1 分，附证据（具体行号/段落）。
+3. **总分判定**：
+   - **≥ 7 分**：在笔记末尾追加 `## 质量自评` 段，包含评分表 + 评级；正常 commit + push。
+   - **< 7 分**：必须自主修改后重新自评；连续 3 次 < 7 触发 `/skill-evolve`。
+   - **< 5 分**：直接重写，从大纲阶段开始重做。
+
+### 适用范围
+
+- ✅ `/paper-note` 生成的论文精读笔记（全检）
+- ✅ `/note-research` 生成的调研笔记（重点检 #4 #5 #9）
+- ✅ `daily-paper-generator` Top 1 论文（全检）/ Top 3（部分检）/ Top 10（仅检可验证性）
+- ✅ `obsidian-project-kb-core` Wiki 维护时新建/更新的概念页
+- ❌ 简单问答、`idea/`、`news/`、`raw/`（除 lessons）不强制
+
+### 与现有 skill 的衔接
+
+- `paper-note` / `note-research` / `daily-paper-generator` 三个 skill 已在末尾强制嵌入评分卡。
+- `quality-control-checker` skill 封装 10 条自检命令 + 评分卡模板。
+
+### 评级对标
+
+| 总分 | 评级 | 对标 |
+|---|---|---|
+| 9-10 | 顶会水准 | Lilian Weng / Distill.pub / 顶会论文 |
+| 7-8 | 付费资料水准 | 知名研究员博客 / 顶级技术书 |
+| 5-6 | 普通博客水准 | Medium 优秀技术博客 |
+| < 5 | 不合格 | 必须重写 |
+
+### 相关文档
+
+- 标准 + 评分卡：`research/08-strategy/note-quality-standards.md`
+- 调研汇总 + 路线图：`research/08-strategy/note-quality-research.md`
+- Obsidian 工具链：`research/06-tools/obsidian-advanced-toolkit.md`
+
 ## Git 同步规则
 
 本仓库已关联到 GitHub：`https://github.com/yangchunwanwusheng/obsidian`
